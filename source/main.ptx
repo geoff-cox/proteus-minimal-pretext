@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <!-- we first include a file which contains the docinfo element: -->
-  <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+  <book><title> PROTEUS Test Environment </title>
 
-    <!-- Include frontmatter -->
-    <xi:include href="./frontmatter.ptx" />
+    <chapter><title> Matching Questions </title>
 
-    <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+      <exercise label="matching-01"><title> Matching Problem Title </title>
+        <statement>
+          <p>
+            Matching Question Statement
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            General Feedback (displays when "Check Me" is clicked).
+          </p>
+        </feedback>
+        <matches>
+          <match>
+            <premise> Premise 1 </premise>
+            <response> Response 1 </response>
+          </match>
+          <match>
+            <premise> Premise 2 </premise>
+            <response> Response 2 </response>
+          </match>
+          <match>
+            <premise> Premise 3 </premise>
+            <response> Response 3 </response>
+          </match>
+          <match>
+            <premise> Premise 4 </premise>
+            <response> Response 4 </response>
+          </match>
+        </matches>
+      </exercise>
 
-
-    <!-- Include backmatter -->
-    <xi:include href="./backmatter.ptx" />
+    </chapter>
 
   </book>
 </pretext>
