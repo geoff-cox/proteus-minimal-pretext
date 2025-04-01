@@ -76,7 +76,7 @@
 					<response>
 						<md> 
 							<mrow>
-								\Big[\cos\left(x^{ \blank{3}{3} }\right)\amp \Big]' = \blank{4}{5} x^3\cos\left(x^{ \blank{3}{3} }\right)
+								\Big[\sin\left(x^{ \blank{3}{3} }\right)\amp \Big]' = \blank{4}{5} x^3\cos\left(x^{ \blank{3}{3} }\right)
 							</mrow>
 						</md>	
 					</response>
