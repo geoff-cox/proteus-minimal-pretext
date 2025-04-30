@@ -1,0 +1,107 @@
+<chapter><title> Related-Rates Matching Questions </title>
+
+	<exercise label="related-rates-knowns-matching-01"><title> Converting Words Into Math </title>
+	
+		<statement>
+			<p>
+				Match the mathematical expressions on the left to the corresponding statements about changing quantities in a saltwater tank on the right.
+			</p>
+
+			<p>
+				All quantities are functions of time, <m>t</m> (min), defined as follows:
+				<tabular>
+					<row>
+						<cell><m>V(t)</m></cell>
+						<cell>Volume of water in a tank (m<m>^3</m>) at time, <m>t</m></cell>
+					</row>
+					<row>
+						<cell><m>h(t)</m></cell>
+						<cell>Height of water in a tank (m) at time, <m>t</m></cell>
+					</row>
+					<row>
+						<cell><m>C(t)</m></cell>
+						<cell>Concentration of salt in a tank (kg/m<m>^3</m>) at time, <m>t</m></cell>
+					</row>
+				</tabular>
+			</p>
+
+			<hint>
+				<p>
+					<tabular top="minor" valign="top">
+						<col width="5%" />
+						<col width="95%"/>
+						<row>
+							<cell><p><m>\succ</m></p></cell>
+							<cell><p><em>Some mathematical expressions are not given in any of the statements and more than one can go to the same statement.</em></p></cell>
+						</row>
+						<row>
+							<cell><p><m>\succ</m></p></cell>
+							<cell><p><em>Don't forget to look at the units!</em></p></cell>
+						</row>
+						<row bottom="minor">
+							<cell><p><m>\succ</m></p></cell>
+							<cell><p><em>Don't assume the information in different statements are connected.</em></p></cell>
+						</row>
+					</tabular>
+				</p>
+			</hint>
+		</statement>
+	
+		<feedback>
+			<p>
+				Be sure to distinguish between values (like <m>h(3)</m> or <m>C(3)</m>) and rates of change (like <m>\frac{dV}{dt}(3)</m>). Units and context help decide what a statement implies.
+			</p>
+		</feedback>
+	
+		<matches>
+
+			<match>
+				<premise> <m>V(1) = 0.7</m> </premise>
+				<response>
+					<line><m>\text{After}\ 1\ \text{minute, the tank contains}\ 0.7\ \text{m}^3\ \text{of}</m></line>
+					<line><m>\text{water}</m>.</line>
+				</response>
+			</match>
+
+			<match>
+				<premise> <m>V(3) = 1.2</m> </premise>
+				<premise> <m>\frac{dV}{dt}(3) = -0.7</m> </premise>
+				<response>
+					<line><m>\text{After}\ 3\ \text{minutes, the tank contains}\ 1.2\ \text{m}^3\ \text{of}</m></line>
+					<line><m>\text{water, but starts draining at}\ 0.7\ \text{m}^3/\text{min}</m>.</line>
+				</response>
+			</match>
+
+			<match>
+				<premise> <m>C(3) = 0.8</m> </premise>
+				<response>
+					<line><m>\text{The salt concentration at}\ t = 3\ \text{is}\ 0.1\ \text{kg/m}^3</m>.</line>
+				</response>
+			</match>
+	
+			<match>
+				<premise> <m>C(0) = 0</m> </premise>
+				<premise> <m>\frac{dC}{dt}(1) = 0.02</m> </premise>
+				<response>
+					<line><m>\text{Initially, the tank has no salt, but it is added}</m></line>
+					<line><m>1\ \text{minute later, causing the concentration to}</m></line> 
+					<line><m>\text{begin changing by}\ 0.02\ \text{kg/m}^3\ \text{per minute}</m>.</line> 
+				</response>
+			</match>
+
+			<match>
+				<premise> <m>\frac{dV}{dt}(3) = 0.1</m> </premise>
+				<response>
+					<line><m>\text{At}\ t=1,\ \text{the tank is filling by}\ 0.1\ \text{m}^3/\text{min}</m>.</line> 
+				</response>
+			</match>
+			
+			<match>
+				<premise> <m>\frac{dV}{dt}(3) = 0.7</m> </premise>
+				<premise> <m>\frac{dV}{dt}(1) = 0.7</m> </premise>
+			</match>
+			
+		</matches>
+	</exercise>
+
+</chapter>

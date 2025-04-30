@@ -1,0 +1,9 @@
+<docinfo>
+	<latex-image-preamble>
+		\usepackage[dvipsnames]{xcolor}
+	</latex-image-preamble>
+	<macros>
+		\definecolor{CustomGray}{rgb}{0.71, 0.71, 0.71}
+		\newcommand\blank[2]{\,\colorbox{CustomGray}{$\phantom{\rule{#1pt}{#2pt}}$}\,}
+	</macros>
+</docinfo>
