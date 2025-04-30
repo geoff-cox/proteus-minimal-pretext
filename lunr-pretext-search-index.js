@@ -7,14 +7,23 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "1",
   "title": "Chain-Rule Matching Questions",
-  "body": "Chain-Rule Matching Questions  What's Missing in the Chain Rule?   Drag the missing parts (on the left) needed to complete the derivatives (on the right).          One derivative may require multiple parts (the order doesn't matter).         Some parts may not be needed and should remain in left panel.                                                    "
+  "body": "Chain-Rule Matching Questions  Matching Problem Title   Matching Question Statement    General Feedback (displays when \"Check Me\" is clicked).     Premise 1  Response 1    Premise 2  Response 2    Premise 3  Premise 4  Response 3    Premise Distractor 1  Premise Distractor 2    Response Distractor 1     What's Missing in the Chain Rule?   Drag the missing parts (on the left) needed to complete the derivatives (on the right).          One derivative may require multiple parts (the order doesn't matter).         Some parts may not be needed and should remain in left panel.                                                    "
 },
 {
-  "id": "chain-rule-matching-00",
+  "id": "chain-rule-matching-01",
   "level": "2",
-  "url": "root-1-2-2.html#chain-rule-matching-00",
+  "url": "root-1-2-2.html#chain-rule-matching-01",
   "type": "Checkpoint",
   "number": "1.0.1",
+  "title": "Matching Problem Title.",
+  "body": "Matching Problem Title   Matching Question Statement    General Feedback (displays when \"Check Me\" is clicked).     Premise 1  Response 1    Premise 2  Response 2    Premise 3  Premise 4  Response 3    Premise Distractor 1  Premise Distractor 2    Response Distractor 1    "
+},
+{
+  "id": "chain-rule-matching-02",
+  "level": "2",
+  "url": "root-1-2-2.html#chain-rule-matching-02",
+  "type": "Checkpoint",
+  "number": "1.0.2",
   "title": "What’s Missing in the Chain Rule?",
   "body": "What's Missing in the Chain Rule?   Drag the missing parts (on the left) needed to complete the derivatives (on the right).          One derivative may require multiple parts (the order doesn't matter).         Some parts may not be needed and should remain in left panel.                                                   "
 },
