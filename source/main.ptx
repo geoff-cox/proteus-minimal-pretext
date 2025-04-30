@@ -4,10 +4,10 @@
 
 	<xi:include href="book-docs/doc-info.ptx" />
 
-<book><title> PROTEUS Test Environment </title>
+	<book><title> PROTEUS Test Environment </title>
 
-	<xi:include href="matching-questions/chain-rule-mqs.ptx" />
-	<xi:include href="matching-questions/related-rates-mqs.ptx" />
+		<xi:include href="matching-questions.ptx" />
 
-</book>
+	</book>
+	
 </pretext>
