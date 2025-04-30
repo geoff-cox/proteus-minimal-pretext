@@ -58,8 +58,7 @@
 		<match>
 			<premise> <m>V(1) = 0.7</m> </premise>
 			<response>
-				<line><m>\text{After}\ 1\ \text{minute, the tank contains}\ 0.7\ \text{m}^3\ \text{of}</m></line>
-				<line><m>\text{water}</m>.</line>
+				<line><m>\text{After}\ 1\ \text{minute, the tank contains}\ 0.7\ \text{m}^3\ \text{of water}</m>.</line>
 			</response>
 		</match>
 
@@ -67,8 +66,8 @@
 			<premise> <m>V(3) = 1.2</m> </premise>
 			<premise> <m>\frac{dV}{dt}(3) = -0.7</m> </premise>
 			<response>
-				<line><m>\text{After}\ 3\ \text{minutes, the tank contains}\ 1.2\ \text{m}^3\ \text{of}</m></line>
-				<line><m>\text{water, but starts draining at}\ 0.7\ \text{m}^3/\text{min}</m>.</line>
+				<line><m>\text{After}\ 3\ \text{minutes, the tank contains}\ 1.2\ \text{m}^3\ \text{of water,}</m></line>
+				<line><m>\text{but starts draining at}\ 0.7\ \text{m}^3/\text{min}</m>.</line>
 			</response>
 		</match>
 
@@ -83,9 +82,9 @@
 			<premise> <m>C(0) = 0</m> </premise>
 			<premise> <m>\frac{dC}{dt}(1) = 0.02</m> </premise>
 			<response>
-				<line><m>\text{Initially, the tank has no salt, but it is added}</m></line>
-				<line><m>1\ \text{minute later, causing the concentration to}</m></line> 
-				<line><m>\text{begin changing by}\ 0.02\ \text{kg/m}^3\ \text{per minute}</m>.</line> 
+				<line><m>\text{Initially, the tank has no salt, but it is added} 1\ \text{minute}</m></line>
+				<line><m>\text{later, causing the concentration to begin changing}</m></line> 
+				<line><m>\text{by}\ 0.02\ \text{kg/m}^3\ \text{per minute}</m>.</line> 
 			</response>
 		</match>
 
