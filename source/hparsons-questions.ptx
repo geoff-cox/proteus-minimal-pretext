@@ -1,0 +1,126 @@
+<chapter><title> Proteus Matching Questions </title>
+
+<exercise label="hparson-derivative" language="math">
+	<title> Unscramble the Derivative </title>
+	<statement>
+	<p>
+		Rearrange the blocks to form a valid derivative statement.
+	</p>
+	</statement>
+	<blocks layout="horizontal" randomize="yes">
+	<block order="1"><m>\left(\right.</m></block>
+	<block order="2"><m>x^2</m></block>
+	<block order="3"><m>\sin x</m></block>
+	<block order="4"><m>\left.\right)'</m></block>
+	<block order="1"><m>=</m></block>
+	<block order="1"><m>2x</m></block>
+	<block order="3"><m>\sin x</m></block>
+	<block order="4"><m>+</m></block>
+	<block order="1"><m>x^2</m></block>
+	<block order="1"><m>\cos x</m></block>
+	</blocks>
+</exercise>
+
+<exercise xml:id="matching-steps" label="ex-matching-steps">
+  <title> List the Steps </title>
+  <idx>matching steps to order</idx>
+  <statement>
+    <p>
+		Suppose we want apply implicit differentiation to find <m>\frac{dy}{dx}</m> for the equation
+		<me>y - y^2 = 3x</me>.
+		List the implicit differentiation steps in the correct order in the right column.
+    </p>
+  </statement>
+  <cardsort>
+	<match>
+		<premise order="1"><m>\displaystyle\frac{d}{dx}(y - y^2) = \frac{d}{dx}(3x)</m></premise>
+		<response>Step 1</response>
+	</match>
+	<match>
+		<premise order="2"><m>\displaystyle\frac{d}{dx}(y) - \frac{d}{dx}(y^2) = \frac{d}{dx}(3x)</m></premise>
+		<response>Step 2</response>
+	</match>
+	<match>
+		<premise order="3"><m>\displaystyle\frac{dy}{dx} - 2y\frac{dy}{dx} = 3</m></premise>
+		<response>Step 3</response>
+	</match>
+	<match>
+		<premise order="3"><m>\displaystyle\frac{dy}{dx}\left(1-2y\right) = 3</m></premise>
+		<response>Step 4</response>
+	</match>
+	<match>
+		<premise order="4"><m>\displaystyle\frac{dy}{dx} = \frac{3}{1-2y}</m></premise>
+		<response>Step 5</response>
+	</match>
+  </cardsort>
+</exercise>
+
+<exercise xml:id="parson-steps" label="ex-parson-steps">
+  <title> List the Steps </title>
+  <idx>order steps</idx>
+  <statement>
+    <p>
+		Suppose we want apply implicit differentiation to find <m>\frac{dy}{dx}</m> for the equation
+		<me>y - y^2 = 3x</me>.
+		List the implicit differentiation steps in the correct order in the right column.
+    </p>
+  </statement>
+  <blocks>
+	<block>
+		<m>\displaystyle\frac{d}{dx}(y - y^2) = \frac{d}{dx}(3x)</m>
+	</block>
+	<block>
+		<m>\displaystyle\frac{d}{dx}(y) - \frac{d}{dx}(y^2) = \frac{d}{dx}(3x)</m>
+	</block>
+	<block>
+		<m>\displaystyle\frac{dy}{dx} - 2y\frac{dy}{dx} = 3</m>
+	</block>
+	<block>
+		<m>\displaystyle\frac{dy}{dx}\left(1-2y\right) = 3</m>
+	</block>
+	<block>
+		<m>\displaystyle\frac{dy}{dx} = \frac{3}{1-2y}</m>
+	</block>
+  </blocks>
+</exercise>
+
+<exercise xml:id="reason-steps" label="ex-matching-step-reason">
+  <title> Match the Reason to the Step </title>
+  <idx>matching steps to order</idx>
+  <statement>
+    <p>
+		Suppose we want apply implicit differentiation to find <m>\frac{dy}{dx}</m> for the equation
+		<me>y + y^2 = 3x^6</me>.
+		Match the one or more tasks on the right that was applied in each step on the left.
+    </p>
+  </statement>
+  <cardsort>
+	<match>
+		<premise>apply the derivative with respect <m>x</m> to both sides</premise>
+		<response><me>\frac{d}{dx}(y + y^2) = \frac{d}{dx}(3x^6)</me></response>
+	</match>
+	<match>
+		<premise>sum rule</premise>
+		<response><me>\frac{d}{dx}(y) + \frac{d}{dx}(y^2) = \frac{d}{dx}(3x^6)</me></response>
+	</match>
+	<match>
+		<premise>chain rule</premise>
+		<premise>power rule</premise>
+		<response><me>\frac{dy}{dx} + 2y\frac{dy}{dx} = 18x^5</me></response>
+	</match>
+	<match>
+		<premise>factor</premise>
+		<response><me>\frac{dy}{dx}\left(1+2y\right) = 18x^5</me></response>
+	</match>
+	<match>
+		<premise>divide both sides by <m>1+2y</m></premise>
+		<response><me>\frac{dy}{dx} = \frac{18x^5}{1+2y}</me></response>
+	</match>
+	<match>
+		<premise>quotient rule</premise>
+		<premise>simplify</premise>
+	</match>
+  </cardsort>
+</exercise>
+
+</chapter>
