@@ -1,0 +1,33 @@
+<chapter><title> Proteus Matching Questions </title>
+
+<exercise label="dynamic-fitb-simple-formulazz">
+  <title>Fill-In Formula (Dynamic)</title>
+  <statement>
+    <p>
+      Find a formula for a cubic function <m>f(x)</m> that has roots at <m>a=<eval obj="a"/></m> and <m>b=<eval obj="b"/></m>
+    </p>
+    <p>
+      <m>f(x)=</m> <fillin name="st_fx" mode="math" ansobj="cubic"/>
+    </p>
+  </statement>
+  <setup seed="314159">
+    <de-object name="a" context="number">
+    	<de-random distribution="discrete" min="1" max="4" by="1"/>
+    </de-object>
+	<de-object name="b" context="number">
+    	<de-random distribution="discrete" min="2" max="5" by="1"/>
+    </de-object>
+    <de-object name="fx" context="formula">
+    	<de-expression reduce="yes">a*x^2-b</de-expression>
+    </de-object>
+  </setup>
+  <evaluation>
+  <evaluate name="st_fx">
+	<test correct="yes">
+		<mathcmp obj="fx"/>
+	</test>
+  </evaluate>
+  </evaluation>
+</exercise>
+
+</chapter>
