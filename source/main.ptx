@@ -2,11 +2,12 @@
 
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-	<xi:include href="book-docs/doc-info.ptx" />
+	<!-- <xi:include href="book-docs/doc-info.ptx" /> -->
 
-	<book><title> PROTEUS Test Environment </title>
+	<book><title> Test Environment </title>
 
-		<xi:include href="matching-questions.ptx" />
+		<!-- <xi:include href="matching-questions.ptx" /> -->
+		<xi:include href="matching-test.ptx" />
 
 	</book>
 	
