@@ -1,0 +1,11 @@
+<chapter><title> Proteus Matching Questions </title>
+
+    <p>
+        The function <m>f(t) = e^{−t}</m> satisfies the differential equation 
+        <me>
+            f'(t) = −f(t)
+        </me>, 
+        which is characteristic of exponential decay.
+    </p>
+
+</chapter>

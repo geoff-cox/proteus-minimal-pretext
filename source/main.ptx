@@ -4,11 +4,12 @@
 
 	<!-- <xi:include href="book-docs/doc-info.ptx" /> -->
 
-	<book><title> PROTEUS Test Environment </title>
+	<book><title> Test Environment </title>
 
 		<!-- <xi:include href="matching-questions.ptx" /> -->
 		<!-- <xi:include href="hparsons-questions.ptx" /> -->
-		<xi:include href="fillin-questions.ptx" />
+		<!-- <xi:include href="fillin-questions.ptx" /> -->
+		<xi:include href="reveal-text.ptx" />
 
 	</book>
 	
