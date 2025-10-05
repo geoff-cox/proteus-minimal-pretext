@@ -1,0 +1,273 @@
+<chapter><title> PROTEUS Differentials Reading Questions </title>
+
+    <!-- After the Tangent Line Approximation of sin(1.1) -->
+    <exercise label="chkpt-diff-tangent-approx">
+    <title>Why Tangent Lines Work</title>
+    <statement>
+        <p>
+        Why does the tangent line give a good approximation of <m>f(x)</m> near the point of tangency?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice>
+        <statement><p>Because tangent lines exactly match the graph of <m>f(x)</m> everywhere.</p></statement>
+        <feedback><p>Not true—tangent lines only approximate well locally, not globally.</p></feedback>
+        </choice>
+        <choice correct="yes">
+        <statement><p>Because the slope of the tangent matches the slope of the curve at that point.</p></statement>
+        <feedback><p>Correct—the tangent line shares the same instantaneous rate of change, so it hugs the curve nearby.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Because tangent lines minimize the error for all values of <m>x</m>.</p></statement>
+        <feedback><p>Not correct—the error grows as you move away from the tangent point.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+    <!-- After the Definition of Linearization -->
+    <exercise label="chkpt-diff-linearization">
+    <title>Linearization vs. Actual Change</title>
+    <statement>
+        <p>
+        Match each symbol to its meaning in the context of linearization.
+        </p>
+    </statement>
+    <feedback><p>This reinforces the distinction between approximate and actual changes.</p></feedback>
+    <cardsort>
+        <match>
+        <premise><m>\Delta y</m></premise>
+        <response>The true change in <m>y</m> when <m>x</m> changes</response>
+        </match>
+        <match>
+        <premise><m>dy</m></premise>
+        <response>The linear (approximate) change in <m>y</m></response>
+        </match>
+        <match>
+        <premise><m>dx</m></premise>
+        <response>A chosen small change in <m>x</m></response>
+        </match>
+        <match>
+        <premise><m>f'(c)</m></premise>
+        <response>The slope of the tangent line at <m>x=c</m></response>
+        </match>
+    </cardsort>
+    </exercise>
+
+    <!-- After the First Worked Example (f(x)=x², approximating f(3.1)) -->
+    <exercise label="chkpt-diff-approx-quality">
+    <title>Quality of Approximation</title>
+    <statement>
+        <p>
+        Which statement best describes why <m>f(3.1)</m> was well approximated by the tangent line?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+        <statement><p>The change in <m>x</m> was small, so the tangent line stayed close to the curve.</p></statement>
+        <feedback><p>Correct—small increments in <m>x</m> make linearization effective.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>The tangent line has the same slope as the secant line between (3,9) and (3.1,f(3.1)).</p></statement>
+        <feedback><p>Not exactly—though slopes are close, the tangent is defined at a single point.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Tangent line approximations are always exact for quadratic functions.</p></statement>
+        <feedback><p>Incorrect—for quadratics, tangent lines approximate well locally, but not globally.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+    <!-- After the Formal Definition of Differentials (dx and dy) -->
+    <exercise label="chkpt-diff-true-false">
+    <title>True or False: dx and Δx</title>
+    <statement correct="yes">
+        <p>
+        The notation <m>dx</m> is taken to mean an arbitrary small change in <m>x</m>, which we often set equal to <m>\Delta x</m>.
+        </p>
+    </statement>
+    <feedback>
+        <p>
+        Yes—this is one of the few cases where <m>dx</m> and <m>\Delta x</m> are identified.
+        </p>
+    </feedback>
+    </exercise>
+
+    <!-- After the Error Propagation Example (ball bearing mass) -->
+    <exercise label="chkpt-diff-error">
+    <title>Error Propagation</title>
+    <statement>
+        <p>
+        Select all statements that correctly describe how differentials help with error analysis.
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+        <statement><p>Differentials estimate how a small error in input produces an error in output.</p></statement>
+        <feedback><p>Correct—that is their main use in measurement error contexts.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Differentials guarantee the error will always be smaller than the true error.</p></statement>
+        <feedback><p>Not necessarily—they approximate but don’t bound the error.</p></feedback>
+        </choice>
+        <choice correct="yes">
+        <statement><p>Relative error compares the estimated error to the actual size of the measurement.</p></statement>
+        <feedback><p>Correct—relative error gives context for how significant the error is.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Using differentials eliminates measurement error entirely.</p></statement>
+        <feedback><p>No—differentials only help estimate error, not remove it.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+    <!-- Reflection at the End of Section -->
+    <exercise label="chkpt-diff-reflection">
+    <title>Reflect on Differentials</title>
+    <statement>
+        <p>
+        In a short response, describe one practical use of differentials and why linear approximations are valuable in real-world contexts.
+        </p>
+    </statement>
+    <response/>
+    </exercise>
+
+    <!-- Misconception Check (True/False) -->
+    <exercise label="chkpt-diff-misconception">
+    <title>Misconceptions about Differentials</title>
+    <statement correct="no">
+        <p>
+        The symbol <m>dy/dx</m> in differential notation is literally a fraction of two separate quantities, <m>dy</m> and <m>dx</m>.
+        </p>
+    </statement>
+    <feedback>
+        <p>
+        False — <m>dy/dx</m> is one symbol for the derivative, not an actual fraction. The resemblance to a fraction is helpful but can be misleading.
+        </p>
+    </feedback>
+    </exercise>
+
+    <!-- Real-World Context (Multiple-Choice) -->
+    <exercise label="chkpt-diff-real-world">
+    <title>When Differentials Matter</title>
+    <statement>
+        <p>
+        Which situation best illustrates the value of using differentials instead of exact calculations?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice>
+        <statement><p>Finding the exact value of <m>25^2</m> on a calculator.</p></statement>
+        <feedback><p>No need for an approximation here — exact computation is trivial.</p></feedback>
+        </choice>
+        <choice correct="yes">
+        <statement><p>Estimating how a small error in measuring a radius affects the volume of a sphere.</p></statement>
+        <feedback><p>Correct — differentials estimate how small input changes propagate to outputs.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Calculating <m>\sqrt{9}</m> exactly.</p></statement>
+        <feedback><p>This is exact and doesn’t need linear approximation.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Solving <m>x^2 - 4x + 3 = 0</m> algebraically.</p></statement>
+        <feedback><p>This is an algebra problem, not a context for differentials.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+    <!-- Matching (Symbols and Interpretations) -->
+    <exercise label="chkpt-diff-symbols">
+    <title>What Does Each Symbol Mean?</title>
+    <statement>
+        <p>
+        Match each differential symbol with its best interpretation.
+        </p>
+    </statement>
+    <feedback>
+        <p>
+        Distinguishing between Δ and d notations helps prevent common mistakes.
+        </p>
+    </feedback>
+    <cardsort>
+        <match>
+        <premise><m>\Delta y</m></premise>
+        <response>The exact change in <m>y</m></response>
+        </match>
+        <match>
+        <premise><m>dy</m></premise>
+        <response>An approximate change in <m>y</m> based on the tangent line</response>
+        </match>
+        <match>
+        <premise><m>dx</m></premise>
+        <response>An arbitrarily small chosen change in <m>x</m></response>
+        </match>
+        <match>
+        <premise><m>dy/dx</m></premise>
+        <response>The derivative of <m>y</m> with respect to <m>x</m></response>
+        </match>
+    </cardsort>
+    </exercise>
+
+    <!-- Interactive Formula Completion (Dynamic Fill-in) -->
+    <exercise label="chkpt-diff-fill-in">
+    <title>Complete the Linearization Formula</title>
+    <statement>
+        <p>
+        Fill in the blanks to complete the formula for the linear approximation of <m>f(x)</m> at <m>x=c</m>.
+        </p>
+        <p>
+        <m>\ell(x) = </m> <fillin mode="math" answer="f(c)"/> + <fillin mode="math" answer="f'(c)"/> (<m>x</m> - <fillin mode="math" answer="c"/>)
+        </p>
+    </statement>
+    <evaluation>
+        <evaluate>
+        <test correct="yes"><mathcmp answer="f(c)"/></test>
+        </evaluate>
+        <evaluate>
+        <test correct="yes"><mathcmp answer="f'(c)"/></test>
+        </evaluate>
+        <evaluate>
+        <test correct="yes"><mathcmp answer="c"/></test>
+        </evaluate>
+    </evaluation>
+    </exercise>
+
+    <!-- Critical Thinking (Short Answer) -->
+    <exercise label="chkpt-diff-short-answer">
+    <title>Δy vs. dy in Practice</title>
+    <statement>
+        <p>
+        Imagine you measure the diameter of a steel rod with a small error. Explain in your own words why using <m>dy</m> is often more useful than computing the exact <m>\Delta y</m>.
+        </p>
+    </statement>
+    <response/>
+    </exercise>
+
+    <!-- Application Extension (Multiple-Answer) -->
+    <exercise label="chkpt-diff-apps">
+    <title>Applications of Differentials</title>
+    <statement>
+        <p>
+        Which of the following are common uses of differentials? Select all that apply.
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+        <statement><p>Estimating values of functions near a known point.</p></statement>
+        <feedback><p>Correct — that’s linearization in action.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Finding the exact slope of a secant line between two points.</p></statement>
+        <feedback><p>No — differentials are tied to tangent lines, not secants.</p></feedback>
+        </choice>
+        <choice correct="yes">
+        <statement><p>Approximating propagated error in physical measurements.</p></statement>
+        <feedback><p>Correct — error analysis is a practical strength of differentials.</p></feedback>
+        </choice>
+        <choice correct="yes">
+        <statement><p>Connecting derivative notation to integral notation (<m>\int f(x)\,dx</m>).</p></statement>
+        <feedback><p>Correct — differentials appear in integral notation and must be understood.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+</chapter>

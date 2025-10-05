@@ -1,0 +1,267 @@
+<chapter><title> PROTEUS Newton's Method Reading Questions </title>
+
+    <!-- After the Introduction (motivation vs. bisection) -->
+    <exercise label="chkpt-newton-why-needed">
+    <title>Why Newton's Method?</title>
+    <statement>
+        <p>
+        Why do we need approximation methods like Newton’s Method instead of algebraic solutions for equations such as <m>x^5+x+1=0</m>?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice>
+        <statement><p>Because the algebra is too messy but still possible with enough effort.</p></statement>
+        <feedback><p>No—some equations cannot be solved in closed form with standard functions, not just because of messy algebra.</p></feedback>
+        </choice>
+        <choice correct="yes">
+        <statement><p>Because many equations have no algebraic solution in terms of familiar functions.</p></statement>
+        <feedback><p>Exactly—Newton’s Method provides approximate solutions when algebraic ones don’t exist.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Because computers are unable to handle exact solutions.</p></statement>
+        <feedback><p>Not true—computers can handle exact symbolic work in some cases, but the limitation lies in mathematics itself.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+
+    <exercise label="chkpt-newton-history">
+    <title>Newton vs. Bisection</title>
+    <statement>
+        <p>
+        Briefly explain one way Newton’s Method improves on the Bisection Method, and one reason why the Bisection Method might still be preferred in some situations.
+        </p>
+    </statement>
+    <response/>
+    </exercise>
+
+
+    <!-- After the First Figure (tangent-line visualization) -->
+    <exercise label="chkpt-newton-geo-to-algebra">
+    <title>From Tangent Line to Iteration Formula</title>
+    <statement>
+        <p>
+        Match each geometric idea with its algebraic expression in Newton’s Method.
+        </p>
+    </statement>
+    <feedback><p>This question reinforces how the tangent line picture becomes the iterative formula.</p></feedback>
+    <cardsort>
+        <match>
+        <premise>Draw tangent line at <m>(x_n,f(x_n))</m></premise>
+        <response>Equation: <m>y=f'(x_n)(x-x_n)+f(x_n)</m></response>
+        </match>
+        <match>
+        <premise>Find where tangent meets x-axis</premise>
+        <response>Solve for <m>x_{n+1}</m></response>
+        </match>
+        <match>
+        <premise>Update approximation</premise>
+        <response>Formula: <m>x_{n+1} = x_n - f(x_n)/f'(x_n)</m></response>
+        </match>
+    </cardsort>
+    </exercise>
+
+
+    <exercise label="chkpt-newton-clickable-visual">
+    <title>Spot the Key Step</title>
+    <statement>
+        <p>
+        Click on the part of the formula for Newton’s Method that represents the “correction” to the current guess:
+        <me>
+            x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+        </me>
+        </p>
+    </statement>
+    <areas>
+        <p>
+        <area correct="no"><m>x_n</m></area>
+        <area correct="yes"><m>\tfrac{f(x_n)}{f'(x_n)}</m></area>
+        <area correct="no"><m>x_{n+1}</m></area>
+        </p>
+    </areas>
+    <feedback>
+        <p>
+        The fraction <m>f(x_n)/f'(x_n)</m> is the adjustment step — it represents how far along the tangent line we move from <m>x_n</m> to find <m>x_{n+1}</m>.
+        </p>
+    </feedback>
+    </exercise>
+
+
+    <!-- After the Worked Example (cube root polynomial) -->
+    <exercise label="chkpt-newton-initial-guess">
+    <title>The Role of the Initial Guess</title>
+    <statement>
+        <p>
+        Which of the following is the best reason why Newton’s Method succeeded even with the initial guess <m>x_0=1</m> not being very close to the root of <m>x^3-x^2-1=0</m>?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice>
+        <statement><p>Because Newton’s Method always works no matter where you start.</p></statement>
+        <feedback><p>Not true—sometimes it diverges. The success here was not guaranteed.</p></feedback>
+        </choice>
+        <choice correct="yes">
+        <statement><p>Because the tangent lines in this case still led toward the root despite a rough initial guess.</p></statement>
+        <feedback><p>Correct—Newton’s Method is often robust to imperfect starting points.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Because the derivative was zero at <m>x=1</m>.</p></statement>
+        <feedback><p>Incorrect—the derivative was not zero; a zero derivative would actually make Newton’s Method fail.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+
+    <exercise label="chkpt-newton-algorithm-steps">
+    <title>Newton’s Method Steps</title>
+    <statement>
+        <p>
+        Match each step in the algorithm with its purpose.
+        </p>
+    </statement>
+    <feedback>
+        <p>
+        This checks if you can map the procedure to its goals.
+        </p>
+    </feedback>
+    <cardsort>
+        <match>
+        <premise>Choose an initial guess <m>x_0</m></premise>
+        <response>Provide a starting point for the iterations</response>
+        </match>
+        <match>
+        <premise>Compute <m>x_{n+1} = x_n - f(x_n)/f'(x_n)</m></premise>
+        <response>Generate a new approximation</response>
+        </match>
+        <match>
+        <premise>Check decimal agreement of successive values</premise>
+        <response>Determine whether to stop the process</response>
+        </match>
+    </cardsort>
+    </exercise>
+
+
+
+    <!-- After the Calculator/ANS Key Discussion -->
+    <exercise label="chkpt-newton-stopping">
+    <title>Stopping Rule</title>
+    <statement>
+        <p>
+        Which stopping condition is typically used in Newton’s Method when using technology?
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+        <statement><p>When successive approximations agree to the desired number of decimal places.</p></statement>
+        <feedback><p>Correct—decimal agreement ensures accuracy to that many places.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>When the derivative <m>f'(x)</m> becomes zero.</p></statement>
+        <feedback><p>Not correct—a zero derivative may cause failure, not a stopping point.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>After exactly 10 iterations, regardless of accuracy.</p></statement>
+        <feedback><p>Iteration count alone does not guarantee accuracy.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+
+    <!-- In the Convergence/Fails Section (cube root example) -->
+    <exercise label="chkpt-newton-failure">
+    <title>When Newton’s Method Fails</title>
+    <statement>
+        <p>
+        Select all situations where Newton’s Method may fail to converge.
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+        <statement><p>When <m>f'(x_n)=0</m> for some approximation.</p></statement>
+        <feedback><p>Correct—division by zero breaks the formula.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>When the initial guess is always greater than the true root.</p></statement>
+        <feedback><p>Not necessarily—being greater or less isn’t the key issue, the behavior of the tangent lines is.</p></feedback>
+        </choice>
+        <choice correct="yes">
+        <statement><p>When tangent lines push approximations farther away from the root (as in <m>f(x)=x^{1/3}</m>).</p></statement>
+        <feedback><p>Correct—here each step doubled the distance from the root.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>When the function is continuous and differentiable everywhere.</p></statement>
+        <feedback><p>No—continuity and differentiability are necessary, not failure conditions.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+
+    <exercise label="chkpt-newton-true-false">
+    <title>Convergence of Newton’s Method</title>
+    <statement correct="no">
+        <p>
+        If Newton’s Method produces well-defined approximations for several steps, it always converges to the actual root.
+        </p>
+    </statement>
+    <feedback>
+        <p>
+        False — Newton’s Method can generate valid iterations that move away from the root (e.g., <m>f(x)=x^{1/3}</m>). Convergence is not guaranteed.
+        </p>
+    </feedback>
+    </exercise>
+
+
+
+    <!-- Reflection at the End of Section -->
+    <exercise label="chkpt-newton-reflection">
+    <title>Strengths and Weaknesses of Newton’s Method</title>
+    <statement>
+        <p>
+        In a few sentences, summarize one major strength and one major weakness of Newton’s Method.
+        </p>
+    </statement>
+    <response/>
+    </exercise>
+
+
+    <exercise label="chkpt-newton-applications">
+    <title>Where Newton’s Method Fits</title>
+    <statement>
+        <p>
+        Select all situations where Newton’s Method would be a reasonable tool.
+        </p>
+    </statement>
+    <choices randomize="yes">
+        <choice correct="yes">
+        <statement><p>Approximating the solution to <m>\cos(x)=x</m>.</p></statement>
+        <feedback><p>Correct—this equation cannot be solved algebraically but Newton’s Method can approximate the solution.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Finding the exact solution to <m>x^2=9</m>.</p></statement>
+        <feedback><p>Not needed—this equation has an exact solution, so Newton’s Method is unnecessary.</p></feedback>
+        </choice>
+        <choice correct="yes">
+        <statement><p>Programming a calculator or computer to approximate roots efficiently.</p></statement>
+        <feedback><p>Correct—Newton’s Method is fast and widely used in computational root finding.</p></feedback>
+        </choice>
+        <choice>
+        <statement><p>Estimating the slope of a tangent line at a point.</p></statement>
+        <feedback><p>No—Newton’s Method uses tangent slopes, but its goal is to find roots, not slopes.</p></feedback>
+        </choice>
+    </choices>
+    </exercise>
+
+
+    <exercise label="chkpt-newton-intuition">
+    <title>Newton’s Method Intuition</title>
+    <statement>
+        <p>
+        In your own words, explain how tangent lines help us “zoom in” on a root more quickly than simple guess-and-check.
+        </p>
+    </statement>
+    <response/>
+    </exercise>
+
+
+</chapter>
+
