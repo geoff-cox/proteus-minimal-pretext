@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <docinfo>
+	<rename element="fact">📍Location </rename>
+	<rename element="note"> PISS </rename>
 	<latex-image-preamble>
 		\usepackage[dvipsnames]{xcolor}
 	</latex-image-preamble>

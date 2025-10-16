@@ -2,7 +2,7 @@
 
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-	<!-- <xi:include href="book-docs/doc-info.ptx" /> -->
+	<xi:include href="book-docs/doc-info.ptx" />
 
 	<book><title> Test Environment </title>
 

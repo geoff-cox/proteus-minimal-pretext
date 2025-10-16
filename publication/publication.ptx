@@ -75,6 +75,16 @@
       <!--<projects level="2" />-->
       <!--<equations level="2" />-->
       <!--<footnotes level="2" />-->
+
+		<divisions	
+			chapter-start="1"
+			level="2"
+		/>
+
+		<blocks		level="0" />
+		<projects	level="0" />
+		<equations	level="0" />
+		<footnotes	level="0" />
   </numbering>
 
   <!-- LaTeX specific options: set @print="yes" to get pdf set up   -->
@@ -136,7 +146,7 @@
         table="no"
         listing="no"
         list="no"
-        exercise-inline="no"
+        exercise-inline="yes"
         exercise-divisional="no"
         exercise-worksheet="no"
         exercise-readingquestion="no"
