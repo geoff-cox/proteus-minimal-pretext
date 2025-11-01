@@ -1,183 +1,125 @@
 <chapter><title> PROTEUS Newton's Method Reading Questions </title>
 
-    <p>📍Location: <em>Perhap as a conceptual question at the end of the section.</em></p>
-    <exercise label="chkpt-newton-history">
-        <title>Newton vs. Bisection</title>
-        <statement>
-            <p>
-                Briefly explain one way Newton's Method improves on the Bisection Method, and one reason why the Bisection Method might still be preferred in some situations.
-            </p>
-        </statement>
-        <response/>
-    </exercise>
-
     <p>📍Location: <em>After the First Figure (tangent-line visualization)</em></p>
-    <exercise label="chkpt-newton-geo-to-algebra">
-        <title>From Tangent Line to Iteration Formula</title>
-        <statement>
-            <p>
-                Match each geometric idea with the corresponding part in Newton's Method. 
-            </p>
-        </statement>
-        <feedback><p>This question reinforces how the tangent line picture becomes the iterative formula.</p></feedback>
-        <cardsort>
-            <match>
-                <premise>Pick a point on the <m>x</m>-axis</premise>
-                <response>Initial Guess: <m>x_0</m></response>
-            </match>
-            <match>
-                <premise>Draw a tangent line at <m>(x_0,f(x_0))</m></premise>
-                <response><m>y = f'(x_0)(x-x_0) + f(x_0)</m></response>
-            </match>
-            <match>
-                <premise>Locate the point where the tangent line meets the <m>x</m>-axis, say <m>(x_1,0)</m></premise>
-                <response><m>0 = f'(x_0)(x_1-x_0) + f(x_0)</m></response>
-            </match>
-            <match>
-                <premise>Find the <m>x</m>-value of the point where the tangent hits the <m>x</m>-axis</premise>
-                <response><m>x_1 = x_0 - f(x_0)/f'(x_0)</m></response>
-            </match>
-        </cardsort>
-    </exercise>
-
-    <p>📍Location: <em>After the First Figure (tangent-line visualization)</em></p>
-    <exercise label="chkpt-newton-clickable-visual">
-        <title>Spot the Key Step</title>
-        <statement>
-            <p>
-                Click on the part of the formula for Newton's Method that represents the “correction” to the current guess:
-            </p>
-        </statement>
-        <areas>
-            <tabular>
-                <row>
-                    <cell><area correct="no"><m>x_{n+1}</m></area></cell>
-                    <cell><m>=</m></cell>
-                    <cell><area correct="no"><m>x_n</m></area></cell>
-                    <cell><m>-</m></cell>
-                    <cell><area correct="yes"><m>\dfrac{f(x_n)}{f'(x_n)}</m></area></cell>
-                </row>
-            </tabular>
-            <tabular>
-                <row>
-                    <cell><area correct="no"><m>x_{n+1}</m></area></cell>
-                    <cell><m>=</m></cell>
-                    <cell><area correct="no"><m>x_n</m></area></cell>
-                    <cell><m>-</m></cell>
-                    <cell><area correct="yes"><m>\dfrac{f(x_n)}{f'(x_n)}</m></area></cell>
-                </row>
-            </tabular>
-        </areas>
-        <feedback>
-            <p>
-            The fraction <m>f(x_n)/f'(x_n)</m> is the adjustment step — it represents how far along the tangent line we move from <m>x_n</m> to find <m>x_{n+1}</m>.
-            </p>
-        </feedback>
+    <exercise label="chkpt-newton-2">
+      <title>Understanding Newton's Update Formula</title>
+      <statement>
+        <p>
+          Let <m>f(x)</m> be a function of <m>x</m> and let <m>x_0</m> be some <m>x</m>-value. Match each expression on the left with its geometric meaning, on the right. 
+        </p>
+      </statement>
+      <cardsort>
+        <match>
+          <premise><me>(x_0, f(x_0))</me></premise>
+          <response>A point on the graph of <m>f(x)</m>.</response>
+        </match>
+        <match>
+          <premise><me>f'(x_0)</me></premise>
+          <response>Slope of the tangent line passing through <m>(x_0, f(x_0))</m>.</response>
+        </match>
+        <match>
+          <premise><me>y = f'(x_0)(x-x_0)+f(x_0)</me></premise>
+          <response>Equation of the tangent line passing through <m>(x_0, f(x_0))</m>.</response>
+        </match>
+        <match>
+          <premise><me>0 = f'(x_0)(x-x_0)-f(x_0)</me></premise>
+          <response>First step in finding the <m>x</m>-intercept of a line (<em>setting <m>y=0</m></em>).</response>
+        </match>
+        <match>
+          <premise><me>x = x_0 - \dfrac{f(x_0)}{f'(x_0)}</me></premise>
+          <response>The (solved) <m>x</m>-intercept of the tangent line.</response>
+        </match>
+        <match>
+          <premise><me>x_1 = x_0 - \dfrac{f(x_0)}{f'(x_0)}</me></premise>
+          <response>First Approximation in Newton's Method.</response>
+        </match>
+      </cardsort>
     </exercise>
 
     <p>📍Location: <em>After the Worked Example (cube root polynomial)</em></p>
     <exercise label="chkpt-newton-initial-guess">
-    <title>The Role of the Initial Guess</title>
-    <statement>
+      <title>The Role of the Initial Guess</title>
+      <statement>
         <p>
-        Which of the following is the best reason why Newton's Method succeeded even with the initial guess <m>x_0=1</m> not being very close to the root of <m>x^3-x^2-1=0</m>?
+          Which of the following is the best reason why Newton's Method succeeded even with the initial guess <m>x_0=1</m> not being very close to the root of <m>x^3-x^2-1=0</m>?
         </p>
-    </statement>
-    <choices randomize="yes">
+      </statement>
+      <choices randomize="yes">
         <choice>
-        <statement><p>Because Newton's Method always works no matter where you start.</p></statement>
-        <feedback><p>Not true—sometimes it diverges. The success here was not guaranteed.</p></feedback>
+          <statement><p>Newton's Method always works no matter where you start.</p></statement>
+          <feedback><p>Not true—sometimes it diverges. The success here was not guaranteed.</p></feedback>
         </choice>
         <choice correct="yes">
-        <statement><p>Because the tangent lines in this case still led toward the root despite a rough initial guess.</p></statement>
-        <feedback><p>Correct—Newton's Method is often robust to imperfect starting points.</p></feedback>
+          <statement><p>The tangent lines still led toward the root despite a rough initial guess.</p></statement>
+          <feedback><p>Correct—Newton's Method is often robust to imperfect starting points.</p></feedback>
         </choice>
         <choice>
-        <statement><p>Because the derivative was zero at <m>x=1</m>.</p></statement>
-        <feedback><p>Incorrect—the derivative was not zero; a zero derivative would actually make Newton's Method fail.</p></feedback>
+          <statement><p>The derivative was zero at <m>x=1</m>.</p></statement>
+          <feedback><p>Incorrect—the derivative was not zero; a zero derivative would actually make Newton's Method fail.</p></feedback>
         </choice>
-    </choices>
-    </exercise>
-
-    <p>📍Location: <em>After the Calculator/ANS Key Discussion</em></p>
-    <exercise label="chkpt-newton-stopping">
-    <title>Stopping Rule</title>
-    <statement>
-        <p>
-        Which stopping condition is typically used in Newton's Method when using technology?
-        </p>
-    </statement>
-    <choices randomize="yes">
-        <choice correct="yes">
-        <statement><p>When successive approximations agree to the desired number of decimal places.</p></statement>
-        <feedback><p>Correct—decimal agreement ensures accuracy to that many places.</p></feedback>
-        </choice>
-        <choice>
-        <statement><p>When the derivative <m>f'(x)</m> becomes zero.</p></statement>
-        <feedback><p>Not correct—a zero derivative may cause failure, not a stopping point.</p></feedback>
-        </choice>
-        <choice>
-        <statement><p>After exactly 10 iterations, regardless of accuracy.</p></statement>
-        <feedback><p>Iteration count alone does not guarantee accuracy.</p></feedback>
-        </choice>
-    </choices>
+      </choices>
     </exercise>
 
     <p>📍Location: <em>In the Convergence/Fails Section (cube root example)</em></p>
-    <exercise label="chkpt-newton-failure">
-    <title>When Newton's Method Fails</title>
+  <exercise label="chkpt-newton-2">
+    <title>Detecting a <q>Bad</q> Initial Guess</title>
     <statement>
-        <p>
-        Select all situations where Newton's Method may fail to converge.
-        </p>
+      <p>
+        Starting with an initial guess, <m>x_0</m>, suppose you compute the next value, <m>x_1</m>, in Newton's Method using the update formula:
+        <me>x_{1} = x_{0} - \dfrac{f(x_{0})}{f'(x_{0})}</me>
+        Which of the following might be an indication that you have a <q>bad</q> initial guess?
+      </p>
     </statement>
     <choices randomize="yes">
-        <choice correct="yes">
-        <statement><p>When <m>f'(x_n)=0</m> for some approximation.</p></statement>
-        <feedback><p>Correct—division by zero breaks the formula.</p></feedback>
-        </choice>
-        <choice>
-        <statement><p>When the initial guess is always greater than the true root.</p></statement>
-        <feedback><p>Not necessarily—being greater or less isn't the key issue, the behavior of the tangent lines is.</p></feedback>
-        </choice>
-        <choice correct="yes">
-        <statement><p>When tangent lines push approximations farther away from the root (as in <m>f(x)=x^{1/3}</m>).</p></statement>
-        <feedback><p>Correct—here each step doubled the distance from the root.</p></feedback>
-        </choice>
-        <choice>
-        <statement><p>When the function is continuous and differentiable everywhere.</p></statement>
-        <feedback><p>No—continuity and differentiability are necessary, not failure conditions.</p></feedback>
-        </choice>
+      <choice correct="yes">
+        <statement><p>When computing <m>f'(x_0)</m>, you get a value very close to zero.</p></statement>
+        <feedback><p>Yes, a very small <m>f'(x_0)</m> (i.e., denominator in the formula) usually leads to the next approximation being very far from the root.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>The value of <m>x_1</m> is very far from <m>x_0</m>.</p></statement>
+        <feedback><p>Yes, this is a bad sign since it indicates that tangent line passes through a point near a <q>peak</q> or <q>valley</q> of <m>f(x)</m>.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>When computing <m>f'(x_1)</m> in the formula, you get a value near zero.</p></statement>
+        <feedback><p>Since <m>f'(x_1)</m> is not in the formula for <m>x=x_0</m>, it shouldn't bepart of the calculation.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>When computing <m>f(x_0)</m> in the formula, you get a value near zero.</p></statement>
+        <feedback><p>No, this is actually a good sign since <m>x_0</m> is near the root and Newton's method will likely converge.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>The value of <m>x_1</m> is very close to <m>x_0</m>.</p></statement>
+        <feedback><p>No, this is a good sign since the only way this could happen is if <m>f(x_0)</m> is near zero, which means <m>x_0</m> is near the root and Newton's method will likely converge.</p></feedback>
+      </choice>
     </choices>
-    </exercise>
+  </exercise>
 
-    <p>📍Location: <em>?</em></p>
-    <exercise label="chkpt-newton-applications">
+  <exercise label="chkpt-newton-applications">
     <title>Where Newton's Method Fits</title>
     <statement>
         <p>
-        Select all situations where Newton's Method would be a reasonable tool.
+          Select all situations where Newton's Method would be a reasonable tool.
         </p>
     </statement>
     <choices randomize="yes">
-        <choice correct="yes">
+      <choice correct="yes">
         <statement><p>Approximating the solution to <m>\cos(x)=x</m>.</p></statement>
         <feedback><p>Correct—this equation cannot be solved algebraically but Newton's Method can approximate the solution.</p></feedback>
-        </choice>
-        <choice>
+      </choice>
+      <choice>
         <statement><p>Finding the exact solution to <m>x^2=9</m>.</p></statement>
         <feedback><p>Not needed—this equation has an exact solution, so Newton's Method is unnecessary.</p></feedback>
-        </choice>
-        <choice correct="yes">
+      </choice>
+      <choice correct="yes">
         <statement><p>Programming a calculator or computer to approximate roots efficiently.</p></statement>
         <feedback><p>Correct—Newton's Method is fast and widely used in computational root finding.</p></feedback>
-        </choice>
-        <choice>
+      </choice>
+      <choice>
         <statement><p>Estimating the slope of a tangent line at a point.</p></statement>
         <feedback><p>No—Newton's Method uses tangent slopes, but its goal is to find roots, not slopes.</p></feedback>
-        </choice>
+      </choice>
     </choices>
-    </exercise>
+  </exercise>
 
   <exercise label="chkpt-daniel-question">
         <title>From Tangent Line to Iteration Formula</title>
@@ -207,7 +149,7 @@
         </cardsort>
     </exercise>
 
-<exercise label="APEX-PROTEUS-graph-MVT-1-v1">
+  <exercise label="APEX-PROTEUS-graph-MVT-1-v1">
   <title>PROTEUS EXERCISE</title>
   <statement>
     <p>
@@ -233,7 +175,7 @@
     </p>
   </statement>
   <response/>
-</exercise>
+  </exercise>
 
 </chapter>
 
