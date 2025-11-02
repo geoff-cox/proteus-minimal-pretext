@@ -61,7 +61,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "2",
   "title": "PROTEUS Differentials Reading Questions",
-  "body": "PROTEUS Differentials Reading Questions  📍Location: After the Tangent Line Approximation of sin(1.1)   Why Tangent Lines Work   Why does the tangent line give a good approximation of near the point of tangency?     Because tangent lines exactly match the graph of everywhere.  Not true—tangent lines only approximate well locally, not globally.    Because the slope of the tangent matches the slope of the curve at that point.  Correct—the tangent line shares the same instantaneous rate of change, so it hugs the curve nearby.    Because tangent lines minimize the error for all values of .  Not correct—the error grows as you move away from the tangent point.     📍Location: After the Definition of Linearization   Linearization vs. Actual Change   Match each symbol to its meaning in the context of linearization.   Assume is some value of .    This reinforces the distinction between approximate and actual changes.      The true change in when changes     The linear (approximate) change in     A chosen small change in     The slope of the tangent line at     📍Location: After the First Worked Example (f(x)=x², approximating f(3.1))   Quality of Approximation   Which statement best describes why was well approximated by the tangent line?     The change in was small, so the tangent line stayed close to the curve.  Correct—small increments in make linearization effective.    The tangent and secant lines are equal between & .  Not exactly—though slopes are close, the tangent is defined at a single point.    Tangent line approximations are always exact for quadratic functions.  Incorrect—for quadratics, tangent lines approximate well locally, but not globally.     📍Location: After the Error Propagation Example (ball bearing mass)   Error Propagation   Select all statements that correctly describe how differentials help with error analysis.     They estimate how a small error in input produces an error in output.  Correct—that is their main use in measurement error contexts.    They guarantee the error will always be smaller than the true error.  Not necessarily—they approximate but don't bound the error.    They eliminate measurement error entirely.  No—differentials only help estimate error, not remove it.     📍Location: Misconception Check (True\/False)   Differential Notation   The symbol in differential notation is literally a fraction of two separate quantities, and .    False — is one symbol for the derivative, not an actual fraction. The resemblance to a fraction is helpful but can be misleading.    📍Location: Interactive Formula Completion (Dynamic Fill-in)   Complete the Linearization Formula   Fill in the blanks to complete the formula for the linear approximation of at .    + ( - )               "
+  "body": "PROTEUS Differentials Reading Questions  📍Location: After the Tangent Line Approximation of sin(1.1)   Why Tangent Lines Work   Which statement best describes how a tangent line, , approximates at the point of tangency ?     closely resembles the curve near .  Correct—the tangent line shares the same instantaneous rate of change, so it hugs the curve nearby.    closely resembles the graph of for any .  Not true—tangent lines only approximate well near a given point (i.e., locally), not globally.    exactly matches the curve near .  Not true—tangent lines only approximate well near a given point.    is the most accurate approximation of near .  Not correct—the error grows as you move away from the tangent point.     📍Location: After the Definition of Linearization   Linearization vs. Actual Change   Match each symbol to its meaning in the context of linearization.  Assume is some value of .       The true change in when changes     The linear (approximate) change in     A chosen small change in     The slope of the tangent line at     📍Location: Misconception Check (True\/False)   Differential Notation   The symbol in differential notation is literally a fraction of two separate quantities, and .    False — is one symbol for the derivative, not an actual fraction. The resemblance to a fraction is helpful but can be misleading.    📍Location: Interactive Formula Completion (Dynamic Fill-in)   Complete the Linearization Formula   Fill in the blanks to complete the formula for the linear approximation of at .   + ( - )               "
 },
 {
   "id": "chkpt-diff-tangent-approx",
@@ -70,7 +70,7 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "6",
   "title": "Why Tangent Lines Work.",
-  "body": " Why Tangent Lines Work   Why does the tangent line give a good approximation of near the point of tangency?     Because tangent lines exactly match the graph of everywhere.  Not true—tangent lines only approximate well locally, not globally.    Because the slope of the tangent matches the slope of the curve at that point.  Correct—the tangent line shares the same instantaneous rate of change, so it hugs the curve nearby.    Because tangent lines minimize the error for all values of .  Not correct—the error grows as you move away from the tangent point.    "
+  "body": " Why Tangent Lines Work   Which statement best describes how a tangent line, , approximates at the point of tangency ?     closely resembles the curve near .  Correct—the tangent line shares the same instantaneous rate of change, so it hugs the curve nearby.    closely resembles the graph of for any .  Not true—tangent lines only approximate well near a given point (i.e., locally), not globally.    exactly matches the curve near .  Not true—tangent lines only approximate well near a given point.    is the most accurate approximation of near .  Not correct—the error grows as you move away from the tangent point.    "
 },
 {
   "id": "chkpt-diff-linearization",
@@ -79,32 +79,14 @@ var ptx_lunr_docs = [
   "type": "Checkpoint",
   "number": "7",
   "title": "Linearization vs. Actual Change.",
-  "body": " Linearization vs. Actual Change   Match each symbol to its meaning in the context of linearization.   Assume is some value of .    This reinforces the distinction between approximate and actual changes.      The true change in when changes     The linear (approximate) change in     A chosen small change in     The slope of the tangent line at    "
-},
-{
-  "id": "chkpt-diff-approx-quality",
-  "level": "2",
-  "url": "root-1-2-3.html#chkpt-diff-approx-quality",
-  "type": "Checkpoint",
-  "number": "8",
-  "title": "Quality of Approximation.",
-  "body": " Quality of Approximation   Which statement best describes why was well approximated by the tangent line?     The change in was small, so the tangent line stayed close to the curve.  Correct—small increments in make linearization effective.    The tangent and secant lines are equal between & .  Not exactly—though slopes are close, the tangent is defined at a single point.    Tangent line approximations are always exact for quadratic functions.  Incorrect—for quadratics, tangent lines approximate well locally, but not globally.    "
-},
-{
-  "id": "chkpt-diff-error",
-  "level": "2",
-  "url": "root-1-2-3.html#chkpt-diff-error",
-  "type": "Checkpoint",
-  "number": "9",
-  "title": "Error Propagation.",
-  "body": " Error Propagation   Select all statements that correctly describe how differentials help with error analysis.     They estimate how a small error in input produces an error in output.  Correct—that is their main use in measurement error contexts.    They guarantee the error will always be smaller than the true error.  Not necessarily—they approximate but don't bound the error.    They eliminate measurement error entirely.  No—differentials only help estimate error, not remove it.    "
+  "body": " Linearization vs. Actual Change   Match each symbol to its meaning in the context of linearization.  Assume is some value of .       The true change in when changes     The linear (approximate) change in     A chosen small change in     The slope of the tangent line at    "
 },
 {
   "id": "chkpt-diff-misconception",
   "level": "2",
   "url": "root-1-2-3.html#chkpt-diff-misconception",
   "type": "Checkpoint",
-  "number": "10",
+  "number": "8",
   "title": "Differential Notation.",
   "body": " Differential Notation   The symbol in differential notation is literally a fraction of two separate quantities, and .    False — is one symbol for the derivative, not an actual fraction. The resemblance to a fraction is helpful but can be misleading.   "
 },
@@ -113,9 +95,9 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "root-1-2-3.html#chkpt-diff-fill-in",
   "type": "Checkpoint",
-  "number": "11",
+  "number": "9",
   "title": "Complete the Linearization Formula.",
-  "body": " Complete the Linearization Formula   Fill in the blanks to complete the formula for the linear approximation of at .    + ( - )              "
+  "body": " Complete the Linearization Formula   Fill in the blanks to complete the formula for the linear approximation of at .   + ( - )              "
 }
 ]
 
