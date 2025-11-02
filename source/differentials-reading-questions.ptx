@@ -1,147 +1,84 @@
 <chapter><title> PROTEUS Differentials Reading Questions </title>
 
-    <p>📍Location: <em>After the Tangent Line Approximation of sin(1.1)</em></p>
-    <exercise label="chkpt-diff-tangent-approx">
-    <title>Why Tangent Lines Work</title>
+<exercise label="APEX-PROTEUS-differentials-1-v1" component="proteus">
+  <title>Why Tangent Lines Work</title>
+  <statement>
+      <p>Which statement best describes how a tangent line, <m>\ell(x)</m>, approximates <m>f(x)</m> at the point of tangency <m>(x_0,f(x_0))</m>?</p>
+  </statement>
+  <choices randomize="yes">
+    <choice correct="yes">
+      <statement><p><m>\ell(x)</m> closely resembles the curve near <m>(x_0,f(x_0))</m>.</p></statement>
+      <feedback><p>Correct—the tangent line shares the same instantaneous rate of change, so it hugs the curve nearby.</p></feedback>
+    </choice>
+    <choice>
+      <statement><p><m>\ell(x)</m> closely resembles the graph of <m>f(x)</m> for any <m>x</m>.</p></statement>
+      <feedback><p>Not true—tangent lines only approximate well near a given point (i.e., locally), not globally.</p></feedback>
+    </choice>
+    <choice>
+      <statement><p><m>\ell(x)</m> exactly matches the curve near <m>(x_0,f(x_0))</m>.</p></statement>
+      <feedback><p>Not true—tangent lines only approximate well near a given point.</p></feedback>
+    </choice>
+    <choice>
+      <statement><p><m>\ell(x)</m> is the most accurate approximation of <m>f(x)</m> near <m>(x_0,f(x_0))</m>.</p></statement>
+      <feedback><p>Not correct—the error grows as you move away from the tangent point.</p></feedback>
+    </choice>
+  </choices>
+</exercise>
+
+<exercise label="APEX-PROTEUS-differentials-2-v1" component="proteus">
+  <title>Linearization vs. Actual Change</title>
+  <statement>
+    <p>Match each symbol to its meaning in the context of linearization.</p>
+    <p><em>Assume <m>c</m> is some value of <m>x</m>.</em></p>
+  </statement>
+  <cardsort>
+    <match>
+      <premise><me>\Delta y</me></premise>
+      <premise><m>f(c+\Delta x) - f(c)</m></premise>
+      <response>The true change in <m>y</m> when <m>x</m> changes</response>
+    </match>
+    <match>
+      <premise><me>f'(c)\Delta x</me></premise>
+      <response>The linear (approximate) change in <m>y</m></response>
+    </match>
+    <match>
+      <premise><me>\Delta x</me></premise>
+      <response>A chosen small change in <m>x</m></response>
+    </match>
+    <match>
+      <premise><me>f'(c)</me></premise>
+      <response>The slope of the tangent line at <m>x=c</m></response>
+    </match>
+  </cardsort>
+</exercise>
+
+<exercise label="APEX-PROTEUS-differentials-3-v1" component="proteus">
+  <title>Differential Notation</title>
+  <statement correct="no">
+    <p>The symbol <m>dy/dx</m> in differential notation is literally a fraction of two separate quantities, <m>dy</m> and <m>dx</m>.</p>
+  </statement>
+  <feedback>
+    <p>False — <m>dy/dx</m> is one symbol for the derivative, not an actual fraction. The resemblance to a fraction is helpful but can be misleading.</p>
+  </feedback>
+</exercise>
+
+  <exercise label="chkpt-diff-fill-in">
+    <title>Complete the Linearization Formula</title>
     <statement>
-        <p>
-        Why does the tangent line give a good approximation of <m>f(x)</m> near the point of tangency?
-        </p>
+      <p>Fill in the blanks to complete the formula for the linear approximation of <m>f(x)</m> at <m>x=c</m>.</p>
+      <p><m>\ell(x) = </m> <fillin mode="math" answer="f(c)"/> + <fillin mode="math" answer="f'(c)"/> (<m>x</m> - <fillin mode="math" answer="c"/>)</p>
     </statement>
-    <choices randomize="yes">
-        <choice>
-        <statement><p>Because tangent lines exactly match the graph of <m>f(x)</m> everywhere.</p></statement>
-        <feedback><p>Not true—tangent lines only approximate well locally, not globally.</p></feedback>
-        </choice>
-        <choice correct="yes">
-        <statement><p>Because the slope of the tangent matches the slope of the curve at that point.</p></statement>
-        <feedback><p>Correct—the tangent line shares the same instantaneous rate of change, so it hugs the curve nearby.</p></feedback>
-        </choice>
-        <choice>
-        <statement><p>Because tangent lines minimize the error for all values of <m>x</m>.</p></statement>
-        <feedback><p>Not correct—the error grows as you move away from the tangent point.</p></feedback>
-        </choice>
-    </choices>
-    </exercise>
-
-    <p>📍Location: <em>After the Definition of Linearization</em></p>
-    <exercise label="chkpt-diff-linearization">
-    <title>Linearization vs. Actual Change</title>
-        <statement>
-            <p>
-                Match each symbol to its meaning in the context of linearization.
-            </p>
-            <p>
-                <em>Assume <m>c</m> is some value of <m>x</m>.</em>
-            </p>
-        </statement>
-        <feedback><p>This reinforces the distinction between approximate and actual changes.</p></feedback>
-        <cardsort>
-            <match>
-                <premise><m>\Delta y</m></premise>
-                <premise><m>f(c+\Delta x) - f(c)</m></premise>
-                <response>The true change in <m>y</m> when <m>x</m> changes</response>
-            </match>
-            <match>
-                <premise><m>f'(c)\Delta x</m></premise>
-                <response>The linear (approximate) change in <m>y</m></response>
-            </match>
-            <match>
-                <premise><m>\Delta x</m></premise>
-                <response>A chosen small change in <m>x</m></response>
-            </match>
-            <match>
-                <premise><m>f'(c)</m></premise>
-                <response>The slope of the tangent line at <m>x=c</m></response>
-            </match>
-        </cardsort>
-    </exercise>
-
-    <p>📍Location: <em>After the First Worked Example (f(x)=x², approximating f(3.1))</em></p>
-    <exercise label="chkpt-diff-approx-quality">
-    <title>Quality of Approximation</title>
-        <statement>
-            <p>
-            Which statement best describes why <m>f(3.1)</m> was well approximated by the tangent line?
-            </p>
-        </statement>
-        <choices randomize="yes">
-            <choice correct="yes">
-            <statement><p>The change in <m>x</m> was small, so the tangent line stayed close to the curve.</p></statement>
-            <feedback><p>Correct—small increments in <m>x</m> make linearization effective.</p></feedback>
-            </choice>
-            <choice>
-                <statement><p>The tangent and secant lines are equal between <m>(3,9)</m> &amp; <m>(3.1,f(3.1))</m>.</p></statement>
-                <feedback><p>Not exactly—though slopes are close, the tangent is defined at a single point.</p></feedback>
-            </choice>
-            <choice>
-                <statement><p>Tangent line approximations are always exact for quadratic functions.</p></statement>
-                <feedback><p>Incorrect—for quadratics, tangent lines approximate well locally, but not globally.</p></feedback>
-            </choice>
-        </choices>
-    </exercise>
-
-    <p>📍Location: <em>After the Error Propagation Example (ball bearing mass)</em></p>
-    <exercise label="chkpt-diff-error">
-    <title>Error Propagation</title>
-    <statement>
-        <p>
-            Select all statements that correctly describe how differentials help with error analysis.
-        </p>
-    </statement>
-    <choices randomize="yes">
-        <choice correct="yes">
-        <statement><p>They estimate how a small error in input produces an error in output.</p></statement>
-        <feedback><p>Correct—that is their main use in measurement error contexts.</p></feedback>
-        </choice>
-        <choice>
-        <statement><p>They guarantee the error will always be smaller than the true error.</p></statement>
-        <feedback><p>Not necessarily—they approximate but don't bound the error.</p></feedback>
-        </choice>
-        <choice>
-        <statement><p>They eliminate measurement error entirely.</p></statement>
-        <feedback><p>No—differentials only help estimate error, not remove it.</p></feedback>
-        </choice>
-    </choices>
-    </exercise>
-
-    <p>📍Location: <em>Misconception Check (True/False)</em></p>
-    <exercise label="chkpt-diff-misconception">
-    <title>Differential Notation</title>
-        <statement correct="no">
-            <p>
-                The symbol <m>dy/dx</m> in differential notation is literally a fraction of two separate quantities, <m>dy</m> and <m>dx</m>.
-            </p>
-        </statement>
-        <feedback>
-            <p>
-                False — <m>dy/dx</m> is one symbol for the derivative, not an actual fraction. The resemblance to a fraction is helpful but can be misleading.
-            </p>
-        </feedback>
-    </exercise>
-
-    <p>📍Location: <em>Interactive Formula Completion (Dynamic Fill-in)</em></p>
-    <exercise label="chkpt-diff-fill-in">
-        <title>Complete the Linearization Formula</title>
-        <statement>
-            <p>
-            Fill in the blanks to complete the formula for the linear approximation of <m>f(x)</m> at <m>x=c</m>.
-            </p>
-            <p>
-            <m>\ell(x) = </m> <fillin mode="math" answer="f(c)"/> + <fillin mode="math" answer="f'(c)"/> (<m>x</m> - <fillin mode="math" answer="c"/>)
-            </p>
-        </statement>
-        <evaluation>
-            <evaluate>
-            <test correct="yes"><mathcmp answer="f(c)"/></test>
-            </evaluate>
-            <evaluate>
-            <test correct="yes"><mathcmp answer="f'(c)"/></test>
-            </evaluate>
-            <evaluate>
-            <test correct="yes"><mathcmp answer="c"/></test>
-            </evaluate>
-        </evaluation>
-    </exercise>
+    <evaluation>
+      <evaluate>
+        <test correct="yes"><mathcmp answer="f(c)"/></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp answer="f'(c)"/></test>
+      </evaluate>
+      <evaluate>
+        <test correct="yes"><mathcmp answer="c"/></test>
+      </evaluate>
+    </evaluation>
+  </exercise>
 
 </chapter>
