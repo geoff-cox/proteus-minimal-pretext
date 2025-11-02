@@ -1,7 +1,6 @@
 <chapter><title> PROTEUS Newton's Method Reading Questions </title>
 
-    <p>📍Location: <em>After the First Figure (tangent-line visualization)</em></p>
-    <exercise label="chkpt-newton-2">
+    <exercise label="APEX-PROTEUS-newton-1-v1" component="proteus">
       <title>Understanding Newton's Update Formula</title>
       <statement>
         <p>
@@ -36,8 +35,7 @@
       </cardsort>
     </exercise>
 
-    <p>📍Location: <em>After the Worked Example (cube root polynomial)</em></p>
-    <exercise label="chkpt-newton-initial-guess">
+    <!-- <exercise label="APEX-PROTEUS-newton-2-v1" component="proteus">
       <title>The Role of the Initial Guess</title>
       <statement>
         <p>
@@ -58,10 +56,9 @@
           <feedback><p>Incorrect—the derivative was not zero; a zero derivative would actually make Newton's Method fail.</p></feedback>
         </choice>
       </choices>
-    </exercise>
+    </exercise> -->
 
-    <p>📍Location: <em>In the Convergence/Fails Section (cube root example)</em></p>
-  <exercise label="chkpt-newton-2">
+  <exercise label="APEX-PROTEUS-newton-2-v1" component="proteus">
     <title>Detecting a <q>Bad</q> Initial Guess</title>
     <statement>
       <p>
@@ -94,7 +91,7 @@
     </choices>
   </exercise>
 
-  <exercise label="chkpt-newton-applications">
+  <exercise label="APEX-PROTEUS-newton-3-v1" component="proteus">
     <title>Where Newton's Method Fits</title>
     <statement>
         <p>
@@ -122,7 +119,7 @@
   </exercise>
 
   <exercise label="chkpt-daniel-question">
-        <title>From Tangent Line to Iteration Formula</title>
+        <title>Daniel Question</title>
         <statement>
             <p>
                 Given the function <m>f(x)=0.15x^3-0.3x^2-1.8x+2</m> in the interval <m>[-2, 5]</m>, match the behavior of <m>f(x)</m> (left) with the corresponding interval (right).
