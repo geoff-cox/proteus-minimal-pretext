@@ -14,11 +14,12 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>PROTEUS Newton’s Method Reading Questions</title>
+<title>PROTEUS Differential Equations Chapter Reading Questions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -46,7 +47,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -100,16 +118,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.9.15';
+eBookConfig.runestone_version = '7.9.19';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.65bdf16e03e918ea.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.29d986501a531379.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.5c6d23c3bf7decb7.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.296eb9cf978e3bdb.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.557d81b04b3ec0e4.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
@@ -128,7 +146,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="root-1-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="root-1-2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="root-1-2-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="root-1-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="root-1-2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\definecolor{CustomGray}{rgb}{0.71, 0.71, 0.71}
 \newcommand\blank[2]{\,\colorbox{CustomGray}{$\phantom{\rule{#1pt}{#2pt}}$}\,}
 \newcommand{\lt}{&lt;}
@@ -138,144 +156,580 @@ eBookConfig.enable_chatcodes =  false;
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth1 focused" data-preexpanded-levels="0" data-max-levels="1"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-chapter active"><div class="toc-title-box"><a href="root-1-2-2.html" class="internal"><span class="codenumber">1</span> <span class="title">PROTEUS Newton’s Method Reading Questions</span></a></div></li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="root-1-2-3.html" class="internal"><span class="codenumber">2</span> <span class="title">PROTEUS Differentials Reading Questions</span></a></div></li>
-</ul></nav></div>
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth1 focused" data-preexpanded-levels="0" data-max-levels="1"><ul class="structural toc-item-list contains-active"><li class="toc-item toc-chapter active"><div class="toc-title-box"><a href="root-1-2-2.html" class="internal"><span class="codenumber">1</span> <span class="title">PROTEUS Differential Equations Chapter Reading Questions</span></a></div></li></ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="root-1-2-2"><h2 class="heading">
-<span class="type">Chapter</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">PROTEUS Newton’s Method Reading Questions</span>
+<span class="type">Chapter</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">PROTEUS Differential Equations Chapter Reading Questions</span>
 </h2>
-<details id="APEX-PROTEUS-newton-1-v1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Understanding Newton’s Update Formula.</span>
-</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-APEX-PROTEUS-newton-1-v1">
-<span data-subcomponent="question"><div class="para" id="APEX-PROTEUS-newton-1-v1-2-1">Let <span class="process-math">\(f(x)\)</span> be a function of <span class="process-math">\(x\)</span> and let <span class="process-math">\(x_0\)</span> be some <span class="process-math">\(x\)</span>-value. Match each expression on the left with its geometric meaning, on the right.<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-1-v1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></span><li data-subcomponent="draggable" id="rs-APEX-PROTEUS-newton-1-v1_drag1" data-category="1"><div class="displaymath process-math">
+<details id="root-1-2-2-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Interactive Questions.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone tabbed_section">
+<div class="tabs-introduction exercise-leadin"><div class="introduction" id="root-1-2-2-2-2">
+<div class="para logical" id="root-1-2-2-2-2-1">
+<div class="para">Consider the differential equation:</div>
+<div class="displaymath process-math" id="root-1-2-2-2-2-1-1">
 \begin{equation*}
-(x_0, f(x_0))
-\end{equation*}
-</div></li>
-<li data-subcomponent="dropzone" for="rs-APEX-PROTEUS-newton-1-v1_drag1" data-category="1">A point on the graph of <span class="process-math">\(f(x)\text{.}\)</span>
-</li>
-<li data-subcomponent="draggable" id="rs-APEX-PROTEUS-newton-1-v1_drag2" data-category="2"><div class="displaymath process-math">
-\begin{equation*}
-f'(x_0)
-\end{equation*}
-</div></li>
-<li data-subcomponent="dropzone" for="rs-APEX-PROTEUS-newton-1-v1_drag2" data-category="2">Slope of the tangent line passing through <span class="process-math">\((x_0, f(x_0))\text{.}\)</span>
-</li>
-<li data-subcomponent="draggable" id="rs-APEX-PROTEUS-newton-1-v1_drag3" data-category="3"><div class="displaymath process-math">
-\begin{equation*}
-y = f'(x_0)(x-x_0)+f(x_0)
-\end{equation*}
-</div></li>
-<li data-subcomponent="dropzone" for="rs-APEX-PROTEUS-newton-1-v1_drag3" data-category="3">Equation of the tangent line passing through <span class="process-math">\((x_0, f(x_0))\text{.}\)</span>
-</li>
-<li data-subcomponent="draggable" id="rs-APEX-PROTEUS-newton-1-v1_drag4" data-category="4"><div class="displaymath process-math">
-\begin{equation*}
-0 = f'(x_0)(x-x_0)-f(x_0)
-\end{equation*}
-</div></li>
-<li data-subcomponent="dropzone" for="rs-APEX-PROTEUS-newton-1-v1_drag4" data-category="4">First step in finding the <span class="process-math">\(x\)</span>-intercept of a line (<em class="emphasis">setting <span class="process-math">\(y=0\)</span></em>).</li>
-<li data-subcomponent="draggable" id="rs-APEX-PROTEUS-newton-1-v1_drag5" data-category="5"><div class="displaymath process-math">
-\begin{equation*}
-x = x_0 - \dfrac{f(x_0)}{f'(x_0)}
-\end{equation*}
-</div></li>
-<li data-subcomponent="dropzone" for="rs-APEX-PROTEUS-newton-1-v1_drag5" data-category="5">The (solved) <span class="process-math">\(x\)</span>-intercept of the tangent line.</li>
-<li data-subcomponent="draggable" id="rs-APEX-PROTEUS-newton-1-v1_drag6" data-category="6"><div class="displaymath process-math">
-\begin{equation*}
-x_1 = x_0 - \dfrac{f(x_0)}{f'(x_0)}
-\end{equation*}
-</div></li>
-<li data-subcomponent="dropzone" for="rs-APEX-PROTEUS-newton-1-v1_drag6" data-category="6">First Approximation in Newton’s Method.</li>
-</ul></div></div>
-<div class="autopermalink" data-description="Checkpoint 1: Understanding Newton’s Update Formula"><a href="#APEX-PROTEUS-newton-1-v1" title="Copy heading and permalink for Checkpoint 1: Understanding Newton’s Update Formula" aria-label="Copy heading and permalink for Checkpoint 1: Understanding Newton’s Update Formula">🔗</a></div></article></details><details id="APEX-PROTEUS-newton-2-v1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Detecting a “Bad” Initial Guess.</span>
-</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
-<div class="exercise-statement"><div class="para logical" id="APEX-PROTEUS-newton-2-v1-2-1">
-<div class="para">Starting with an initial guess, <span class="process-math">\(x_0\text{,}\)</span> suppose you compute the next value, <span class="process-math">\(x_1\text{,}\)</span> in Newton’s Method using the update formula:</div>
-<div class="displaymath process-math">
-\begin{equation*}
-x_{1} = x_{0} - \dfrac{f(x_{0})}{f'(x_{0})}
+\frac{dy}{dx} = 2xy - 6x,
 \end{equation*}
 </div>
-<div class="para">Which of the following might be an indication that you have a “bad” initial guess?</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-2-v1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">which has the general solution:</div>
+<div class="displaymath process-math" id="root-1-2-2-2-2-1-2">
+\begin{equation*}
+y = c e^{x^2} + 3.
+\end{equation*}
+</div>
+<div class="para">Since the constant <span class="process-math">\(c\)</span> can take any value, there are many possible solutions as seen by the green curves in the figure below. Notice, each green curve can be identified by where it crosses the <span class="process-math">\(y\)</span>-axis (e.g., <span class="process-math">\(y(0) = 2\)</span>). This point is called the initial condition and it leads to both <span class="process-math">\(c\)</span> and the particular solution in blue.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#root-1-2-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="vspace-plz">
+<span class="process-math">\(\)</span><div class="autopermalink" data-description="Paragraph"><a href="#vspace-plz" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;grid-template-columns:100%;column-gap:0%;"><div class="sbspanel sbspanel--top top" style=""><iframe id="interactive-drag-ic" width="300" height="300" src="interactive-drag-ic-if.html"></iframe></div></div></div>
+<div class="para" id="root-1-2-2-2-2-4">Adjust the initial condition in this interactive figure to answer the following.<div class="autopermalink" data-description="Paragraph"><a href="#root-1-2-2-2-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 </div></div>
-<ul data-component="multiplechoice" class="exercise-interactives" id="rs-APEX-PROTEUS-newton-2-v1" data-multipleanswers="true" data-random="">
-<li data-component="answer" id="rs-APEX-PROTEUS-newton-2-v1_opt_a" data-correct=""><div class="para" id="APEX-PROTEUS-newton-2-v1-3-1-1-1">When computing <span class="process-math">\(f'(x_0)\text{,}\)</span> you get a value very close to zero.<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-2-v1-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></li>
-<li data-component="feedback" id="rs-APEX-PROTEUS-newton-2-v1_opt_a"><div class="para" id="APEX-PROTEUS-newton-2-v1-3-1-2-1">Yes, a very small <span class="process-math">\(f'(x_0)\)</span> (i.e., denominator in the formula) usually leads to the next approximation being very far from the root.</div></li>
-<li data-component="answer" id="rs-APEX-PROTEUS-newton-2-v1_opt_b" data-correct=""><div class="para" id="APEX-PROTEUS-newton-2-v1-3-2-1-1">The value of <span class="process-math">\(x_1\)</span> is very far from <span class="process-math">\(x_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-2-v1-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></li>
-<li data-component="feedback" id="rs-APEX-PROTEUS-newton-2-v1_opt_b"><div class="para" id="APEX-PROTEUS-newton-2-v1-3-2-2-1">Yes, this is a bad sign since it indicates that tangent line passes through a point near a “peak” or “valley” of <span class="process-math">\(f(x)\text{.}\)</span>
-</div></li>
-<li data-component="answer" id="rs-APEX-PROTEUS-newton-2-v1_opt_c"><div class="para" id="APEX-PROTEUS-newton-2-v1-3-3-1-1">When computing <span class="process-math">\(f'(x_1)\)</span> in the formula, you get a value near zero.<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-2-v1-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></li>
-<li data-component="feedback" id="rs-APEX-PROTEUS-newton-2-v1_opt_c"><div class="para" id="APEX-PROTEUS-newton-2-v1-3-3-2-1">Since <span class="process-math">\(f'(x_1)\)</span> is not in the formula for <span class="process-math">\(x=x_0\text{,}\)</span> it shouldn’t bepart of the calculation.</div></li>
-<li data-component="answer" id="rs-APEX-PROTEUS-newton-2-v1_opt_d"><div class="para" id="APEX-PROTEUS-newton-2-v1-3-4-1-1">When computing <span class="process-math">\(f(x_0)\)</span> in the formula, you get a value near zero.<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-2-v1-3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></li>
-<li data-component="feedback" id="rs-APEX-PROTEUS-newton-2-v1_opt_d"><div class="para" id="APEX-PROTEUS-newton-2-v1-3-4-2-1">No, this is actually a good sign since <span class="process-math">\(x_0\)</span> is near the root and Newton’s method will likely converge.</div></li>
-<li data-component="answer" id="rs-APEX-PROTEUS-newton-2-v1_opt_e"><div class="para" id="APEX-PROTEUS-newton-2-v1-3-5-1-1">The value of <span class="process-math">\(x_1\)</span> is very close to <span class="process-math">\(x_0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-2-v1-3-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></li>
-<li data-component="feedback" id="rs-APEX-PROTEUS-newton-2-v1_opt_e"><div class="para" id="APEX-PROTEUS-newton-2-v1-3-5-2-1">No, this is a good sign since the only way this could happen is if <span class="process-math">\(f(x_0)\)</span> is near zero, which means <span class="process-math">\(x_0\)</span> is near the root and Newton’s method will likely converge.</div></li>
+<div data-component="tabbedStuff">
+<div data-component="tab" data-tabname="(a)"><article class="task exercise-like" id="chkpt-visualizing-solutions-1"><h3 class="heading">
+<span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Find the particular solution.</span>
+</h3>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para" id="chkpt-visualizing-solutions-1-2-1">Find the particular solution that satisfies <span class="process-math">\(y(0)=5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chkpt-visualizing-solutions-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-chkpt-visualizing-solutions-1" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-1_opt_a"><span class="process-math">\(\quad y = -2e^{x^2}+3\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-1_opt_a">Incorrect. The value of <span class="process-math">\(c\)</span> must make the solution pass through <span class="process-math">\((0, 5)\text{.}\)</span> Hover over the curve in the figure that passes through <span class="process-math">\((0,5)\text{.}\)</span>
+</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-1_opt_b"><span class="process-math">\(\quad y = 0.5e^{x^2}+3\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-1_opt_b">Incorrect. Remember that at <span class="process-math">\(x = 0\text{,}\)</span> the exponential term <span class="process-math">\(e^{x^2}\)</span> equals 1, so <span class="process-math">\(y(0) = c + 3\text{.}\)</span> What value of <span class="process-math">\(c\)</span> gives <span class="process-math">\(y(0) = 5\text{?}\)</span> Hover over the curve in the figure that passes through <span class="process-math">\((0,5)\text{.}\)</span>
+</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-1_opt_c" data-correct=""><span class="process-math">\(\quad y = 2e^{x^2}+3\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-1_opt_c">Correct! The value <span class="process-math">\(c = 2\)</span> ensures that <span class="process-math">\(y(0) = 2 + 3 = 5\text{,}\)</span> so this solution passes through <span class="process-math">\((0, 5)\text{.}\)</span>
+</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-1_opt_d"><span class="process-math">\(\quad y = 5e^{x^2}+3\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-1_opt_d">Incorrect. The general solution would pass through <span class="process-math">\((0, 4)\)</span> if <span class="process-math">\(c = 1\text{.}\)</span> Hover over the curve in the figure that passes through <span class="process-math">\((0,5)\text{.}\)</span>
+</li>
 </ul>
 </div></div>
-<div class="autopermalink" data-description='Checkpoint 2: Detecting a "Bad" Initial Guess'><a href="#APEX-PROTEUS-newton-2-v1" title='Copy heading and permalink for Checkpoint 2: Detecting a "Bad" Initial Guess' aria-label='Copy heading and permalink for Checkpoint 2: Detecting a "Bad" Initial Guess'>🔗</a></div></article></details><details id="APEX-PROTEUS-newton-3-v1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Where Newton’s Method Fits.</span>
-</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
-<div class="exercise-statement"><div class="para" id="APEX-PROTEUS-newton-3-v1-2-1">Select all situations where Newton’s Method would be a reasonable tool.<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-3-v1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Task 1.a: Find the particular solution"><a href="#chkpt-visualizing-solutions-1" title="Copy heading and permalink for Task 1.a: Find the particular solution" aria-label="Copy heading and permalink for Task 1.a: Find the particular solution">🔗</a></div></article></div>
+<div data-component="tab" data-tabname="(b)"><article class="task exercise-like" id="chkpt-visualizing-solutions-2"><h3 class="heading">
+<span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Find the initial condition.</span>
+</h3>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para logical" id="chkpt-visualizing-solutions-2-2-1">
+<div class="para">What is the initial condition for the particular solution</div>
+<div class="displaymath process-math" id="chkpt-visualizing-solutions-2-2-1-1">
+\begin{equation*}
+y = 1.3e^{x^2} + 3\text{?}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#chkpt-visualizing-solutions-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div>
-<ul data-component="multiplechoice" class="exercise-interactives" id="rs-APEX-PROTEUS-newton-3-v1" data-multipleanswers="true" data-random="">
-<li data-component="answer" id="rs-APEX-PROTEUS-newton-3-v1_opt_a" data-correct=""><div class="para" id="APEX-PROTEUS-newton-3-v1-3-1-1-1">Approximating the solution to <span class="process-math">\(\cos(x)=x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-3-v1-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></li>
-<li data-component="feedback" id="rs-APEX-PROTEUS-newton-3-v1_opt_a"><div class="para" id="APEX-PROTEUS-newton-3-v1-3-1-2-1">Correct—this equation cannot be solved algebraically but Newton’s Method can approximate the solution.</div></li>
-<li data-component="answer" id="rs-APEX-PROTEUS-newton-3-v1_opt_b"><div class="para" id="APEX-PROTEUS-newton-3-v1-3-2-1-1">Finding the exact solution to <span class="process-math">\(x^2=9\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-3-v1-3-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></li>
-<li data-component="feedback" id="rs-APEX-PROTEUS-newton-3-v1_opt_b"><div class="para" id="APEX-PROTEUS-newton-3-v1-3-2-2-1">Not needed—this equation has an exact solution, so Newton’s Method is unnecessary.</div></li>
-<li data-component="answer" id="rs-APEX-PROTEUS-newton-3-v1_opt_c" data-correct=""><div class="para" id="APEX-PROTEUS-newton-3-v1-3-3-1-1">Programming a calculator or computer to approximate roots efficiently.<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-3-v1-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></li>
-<li data-component="feedback" id="rs-APEX-PROTEUS-newton-3-v1_opt_c"><div class="para" id="APEX-PROTEUS-newton-3-v1-3-3-2-1">Correct—Newton’s Method is fast and widely used in computational root finding.</div></li>
-<li data-component="answer" id="rs-APEX-PROTEUS-newton-3-v1_opt_d"><div class="para" id="APEX-PROTEUS-newton-3-v1-3-4-1-1">Estimating the slope of a tangent line at a point.<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-newton-3-v1-3-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></li>
-<li data-component="feedback" id="rs-APEX-PROTEUS-newton-3-v1_opt_d"><div class="para" id="APEX-PROTEUS-newton-3-v1-3-4-2-1">No—Newton’s Method uses tangent slopes, but its goal is to find roots, not slopes.</div></li>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-chkpt-visualizing-solutions-2" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-2_opt_a" data-correct=""><span class="process-math">\(\quad y(0)=4.3\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-2_opt_a">Correct! Moving <span class="process-math">\(y(0)\)</span> to this point gives the particular solution above.</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-2_opt_b"><span class="process-math">\(\quad y(0)=5\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-2_opt_b">Incorrect. <em class="emphasis">Hint: move <span class="process-math">\(y(0)\)</span> around until you see the particular solution above.</em>.</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-2_opt_c"><span class="process-math">\(\quad y(0)=1.3\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-2_opt_c">Incorrect. <em class="emphasis">Hint: move <span class="process-math">\(y(0)\)</span> around until you see the particular solution above.</em>.</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-2_opt_d"><span class="process-math">\(\quad y(1)=-1.7\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-2_opt_d">Incorrect. <em class="emphasis">Hint: move <span class="process-math">\(y(0)\)</span> around until you see the particular solution above.</em>.</li>
 </ul>
 </div></div>
-<div class="autopermalink" data-description="Checkpoint 3: Where Newton’s Method Fits"><a href="#APEX-PROTEUS-newton-3-v1" title="Copy heading and permalink for Checkpoint 3: Where Newton’s Method Fits" aria-label="Copy heading and permalink for Checkpoint 3: Where Newton’s Method Fits">🔗</a></div></article></details><details id="chkpt-daniel-question" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Daniel Question.</span>
-</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-chkpt-daniel-question">
-<span data-subcomponent="question"><div class="para" id="chkpt-daniel-question-2-1">Given the function <span class="process-math">\(f(x)=0.15x^3-0.3x^2-1.8x+2\)</span> in the interval <span class="process-math">\([-2, 5]\text{,}\)</span> match the behavior of <span class="process-math">\(f(x)\)</span> (left) with the corresponding interval (right).<div class="autopermalink" data-description="Paragraph"><a href="#chkpt-daniel-question-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></span><span data-subcomponent="feedback"><div class="para" id="chkpt-daniel-question-3-1"></div></span><li data-subcomponent="draggable" id="rs-chkpt-daniel-question_drag1" data-category="1">concave up</li>
-<li data-subcomponent="dropzone" for="rs-chkpt-daniel-question_drag1" data-category="1"><span class="process-math">\(\left(\frac23, 5\right)\)</span></li>
-<li data-subcomponent="draggable" id="rs-chkpt-daniel-question_drag2" data-category="2">concave down</li>
-<li data-subcomponent="dropzone" for="rs-chkpt-daniel-question_drag2" data-category="2"><span class="process-math">\(\left(-2, \frac23\right)\)</span></li>
-<li data-subcomponent="draggable" id="rs-chkpt-daniel-question_drag3" data-category="3">increasing</li>
-<li data-subcomponent="dropzone" for="rs-chkpt-daniel-question_drag3" data-category="3"><span class="process-math">\((-2, -1.44) \cup (2.77, 5)\)</span></li>
-<li data-subcomponent="draggable" id="rs-chkpt-daniel-question_drag4" data-category="4">decreasing</li>
-<li data-subcomponent="dropzone" for="rs-chkpt-daniel-question_drag4" data-category="4"><span class="process-math">\((-1.44, 2.77)\)</span></li>
-</ul></div></div>
-<div class="autopermalink" data-description="Checkpoint 4: Daniel Question"><a href="#chkpt-daniel-question" title="Copy heading and permalink for Checkpoint 4: Daniel Question" aria-label="Copy heading and permalink for Checkpoint 4: Daniel Question">🔗</a></div></article></details><details id="APEX-PROTEUS-graph-MVT-1-v1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
-<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">PROTEUS EXERCISE.</span>
-</h2></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="APEX-PROTEUS-graph-MVT-1-v1-2-1">
-<div class="para">There are two methods used by police to enforce speed limits on highways:</div>
-<ol class="decimal" id="APEX-PROTEUS-graph-MVT-1-v1-2-1-1">
-<li id="APEX-PROTEUS-graph-MVT-1-v1-2-1-1-1">
-<div class="para" id="APEX-PROTEUS-graph-MVT-1-v1-2-1-1-1-1">Radar, in which an officer uses a roadside radar gun to measure the speed of a vehicle<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-graph-MVT-1-v1-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item 5.1"><a href="#APEX-PROTEUS-graph-MVT-1-v1-2-1-1-1" title="Copy heading and permalink for Item 5.1" aria-label="Copy heading and permalink for Item 5.1">🔗</a></div>
+<div class="autopermalink" data-description="Task 1.b: Find the initial condition"><a href="#chkpt-visualizing-solutions-2" title="Copy heading and permalink for Task 1.b: Find the initial condition" aria-label="Copy heading and permalink for Task 1.b: Find the initial condition">🔗</a></div></article></div>
+<div data-component="tab" data-tabname="(c)"><article class="task exercise-like" id="chkpt-visualizing-solutions-3"><h3 class="heading">
+<span class="codenumber">(c)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Find the constant <span class="process-math">\(c\text{.}\)</span>.</span>
+</h3>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement"><div class="para" id="chkpt-visualizing-solutions-3-2-1">Find the <span class="process-math">\(c\)</span>-value for the particular solution that approximately satisfies <span class="process-math">\(y(1)=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#chkpt-visualizing-solutions-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-chkpt-visualizing-solutions-3" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-3_opt_a" data-correct=""><span class="process-math">\(\quad c = -0.7\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-3_opt_a">Correct! Moving <span class="process-math">\(y(0)\)</span> to <span class="process-math">\(2.3\)</span> gives a blue curve that nearly passes through the point <span class="process-math">\((1,1)\text{.}\)</span>
 </li>
-<li id="APEX-PROTEUS-graph-MVT-1-v1-2-1-1-2">
-<div class="para" id="APEX-PROTEUS-graph-MVT-1-v1-2-1-1-2-1">Aircraft patrol, which uses regularly-spaced markings on the highway, and measurement from an aircraft of the time it takes a vehicle to travel between markings.<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-graph-MVT-1-v1-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-3_opt_b"><span class="process-math">\(\quad c = -2\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-3_opt_b">Incorrect. <em class="emphasis">Hint: identify the point <span class="process-math">\((1,1)\)</span> and move <span class="process-math">\(y(0)\)</span> until the blue curve intersect with this point.</em>
+</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-3_opt_c"><span class="process-math">\(\quad c = 0.5\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-3_opt_c">Incorrect. <em class="emphasis">Hint: identify the point <span class="process-math">\((1,1)\)</span> and move <span class="process-math">\(y(0)\)</span> until the blue curve intersect with this point.</em>
+</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-3_opt_d"><span class="process-math">\(\quad c = -1\)</span></li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-3_opt_d">Incorrect. <em class="emphasis">Hint: identify the point <span class="process-math">\((1,1)\)</span> and move <span class="process-math">\(y(0)\)</span> until the blue curve intersect with this point.</em>
+</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Task 1.c: Find the constant c"><a href="#chkpt-visualizing-solutions-3" title="Copy heading and permalink for Task 1.c: Find the constant c" aria-label="Copy heading and permalink for Task 1.c: Find the constant c">🔗</a></div></article></div>
+<div data-component="tab" data-tabname="(d)"><article class="task exercise-like" id="chkpt-visualizing-solutions-4"><h3 class="heading">
+<span class="codenumber">(d)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Role of Initial Conditions.</span>
+</h3>
+<div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">What role do initial conditions play in solving differential equations?</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-chkpt-visualizing-solutions-4" data-multipleanswers="true" data-random="">
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-4_opt_a">They determine the general form of the solution.</li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-4_opt_a">Incorrect. Initial conditions are not used to find the general solution.</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-4_opt_b" data-correct="">They used to determine the constants in the general solution.</li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-4_opt_b">Correct! Initial conditions are used to find specific values for constants in the general solution.</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-4_opt_c" data-correct="">They are used to find the particular solution.</li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-4_opt_c">Correct! Initial conditions are used to find the specific solution that applies to a particular scenario.</li>
+<li data-component="answer" id="rs-chkpt-visualizing-solutions-4_opt_d">They are not needed if the general solution is already known.</li>
+<li data-component="feedback" id="rs-chkpt-visualizing-solutions-4_opt_d">Incorrect. If provided, initial conditions are always needed to get the particular solution from the general solution.</li>
+</ul>
+</div></div>
+<div class="solutions"><details id="chkpt-visualizing-solutions-4-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content"><div class="autopermalink" data-description="Answer 1.d.1"><a href="#chkpt-visualizing-solutions-4-4" title="Copy heading and permalink for Answer 1.d.1" aria-label="Copy heading and permalink for Answer 1.d.1">🔗</a></div></div></details></div>
+<div class="autopermalink" data-description="Task 1.d: Role of Initial Conditions"><a href="#chkpt-visualizing-solutions-4" title="Copy heading and permalink for Task 1.d: Role of Initial Conditions" aria-label="Copy heading and permalink for Task 1.d: Role of Initial Conditions">🔗</a></div></article></div>
 </div>
-<div class="autopermalink" data-description="Item 5.2"><a href="#APEX-PROTEUS-graph-MVT-1-v1-2-1-1-2" title="Copy heading and permalink for Item 5.2" aria-label="Copy heading and permalink for Item 5.2">🔗</a></div>
+</div></div>
+<div class="autopermalink" data-description="Checkpoint 1: Interactive Questions"><a href="#root-1-2-2-2" title="Copy heading and permalink for Checkpoint 1: Interactive Questions" aria-label="Copy heading and permalink for Checkpoint 1: Interactive Questions">🔗</a></div></article></details><details id="separable-des-cyu-1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Find the Separable Equations.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone clickablearea_section"><div data-component="clickablearea" data-question_label="" style="visibility: hidden;" id="rs-separable-des-cyu-1">
+<span data-question=""><div class="para" id="separable-des-cyu-1-2-1">Click on each of the separable differential equations below.<div class="autopermalink" data-description="Paragraph"><a href="#separable-des-cyu-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><span data-feedback=""><div class="para" id="separable-des-cyu-1-4-1">Remember, a differential equation is separable if you can express it as a product of functions of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> separately. Look for equations where the variables are separated by multiplication, not addition or other operations.</div></span><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\dfrac{dy}{dx} = xy^2				\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\dfrac{dz}{dt} = \cos^2 z			\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\dfrac{dy}{dx} = \ln(x)\tan(y)	\)</span></span></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span data-incorrect=""><span class="process-math">\(\dfrac{dy}{dx} = y - x^2	\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\dfrac{dy}{dx} = \pi		\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\dfrac{dy}{dx} = 1 - y	\)</span></span></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\dfrac{dy}{dx} = y^2		\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-incorrect=""><span class="process-math">\(\dfrac{dy}{dx} = x - 3y	\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\dfrac{dy}{dx} = -44		\)</span></span></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td></tr>
+</table></div>
+</div></div></div>
+<div class="autopermalink" data-description="Checkpoint 2: Find the Separable Equations"><a href="#separable-des-cyu-1" title="Copy heading and permalink for Checkpoint 2: Find the Separable Equations" aria-label="Copy heading and permalink for Checkpoint 2: Find the Separable Equations">🔗</a></div></article></details><details id="chkpt-sov-method-steps-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">SOV Matching.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-chkpt-sov-method-steps-2">
+<span data-subcomponent="question"><div class="para" id="chkpt-sov-method-steps-2-2-1">In the context of the separation of variables (SOV) method, match the expression or statement (on the left) with the most appropriate action that you might use in applying this method (on the right).<div class="autopermalink" data-description="Paragraph"><a href="#chkpt-sov-method-steps-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><span data-subcomponent="feedback"><div class="para" id="chkpt-sov-method-steps-2-3-1">Do we want feedback?</div></span><li data-subcomponent="draggable" id="rs-chkpt-sov-method-steps-2_drag1" data-category="1">First-order</li>
+<li data-subcomponent="dropzone" for="rs-chkpt-sov-method-steps-2_drag1" data-category="1">Verify</li>
+<li data-subcomponent="draggable" id="rs-chkpt-sov-method-steps-2_drag2" data-category="2"><span class="process-math">\(\dfrac{dy}{dx} = f(x)g(y)\)</span></li>
+<li data-subcomponent="dropzone" for="rs-chkpt-sov-method-steps-2_drag2" data-category="2">Put in separable form</li>
+<li data-subcomponent="draggable" id="rs-chkpt-sov-method-steps-2_drag3" data-category="3"><span class="process-math">\(\dfrac{1}{g(y)}\ dy = f(x)\ dx\)</span></li>
+<li data-subcomponent="dropzone" for="rs-chkpt-sov-method-steps-2_drag3" data-category="3">Separate variables</li>
+<li data-subcomponent="draggable" id="rs-chkpt-sov-method-steps-2_drag4" data-category="4"><span class="process-math">\(\displaystyle \int \dfrac{1}{g(y)}\ dy = \int f(x)\ dx\)</span></li>
+<li data-subcomponent="dropzone" for="rs-chkpt-sov-method-steps-2_drag4" data-category="4">Integrate both sides</li>
+<li data-subcomponent="draggable" id="rs-chkpt-sov-method-steps-2_drag5" data-category="5">General solution</li>
+<li data-subcomponent="dropzone" for="rs-chkpt-sov-method-steps-2_drag5" data-category="5">Solve for <span class="process-math">\(y\text{,}\)</span> if possible</li>
+<li data-subcomponent="draggable" id="rs-chkpt-sov-method-steps-2_drag6" data-category="6">Particular solution</li>
+<li data-subcomponent="dropzone" for="rs-chkpt-sov-method-steps-2_drag6" data-category="6">Apply initial condition</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Checkpoint 3: SOV Matching"><a href="#chkpt-sov-method-steps-2" title="Copy heading and permalink for Checkpoint 3: SOV Matching" aria-label="Copy heading and permalink for Checkpoint 3: SOV Matching">🔗</a></div></article></details><details id="showing-separable-forms-chkpt-3" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Steps to Show Separable.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-showing-separable-forms-chkpt-3">
+<span data-subcomponent="question"><div class="para logical" id="showing-separable-forms-chkpt-3-2-1">
+<div class="para">Suppose you want to show that the following differential equation is separable:</div>
+<div class="displaymath process-math" id="showing-separable-forms-chkpt-3-2-1-1">
+\begin{equation*}
+\frac{dq}{dt} - 3qt^2 = 2q
+\end{equation*}
+</div>
+<div class="para">Match the scrambled tasks (on the left) to the order that it should be performed to confirm the equation is separable.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#showing-separable-forms-chkpt-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><li data-subcomponent="draggable" id="rs-showing-separable-forms-chkpt-3_drag1" data-category="1">check the equation is 1st-order</li>
+<li data-subcomponent="dropzone" for="rs-showing-separable-forms-chkpt-3_drag1" data-category="1">First, we ...</li>
+<li data-subcomponent="draggable" id="rs-showing-separable-forms-chkpt-3_drag2" data-category="2">move <span class="process-math">\(3qt^2\)</span> to the left side via subtraction</li>
+<li data-subcomponent="dropzone" for="rs-showing-separable-forms-chkpt-3_drag2" data-category="2">Then, we ...</li>
+<li data-subcomponent="draggable" id="rs-showing-separable-forms-chkpt-3_drag3" data-category="3">factor out a common factor of <span class="process-math">\(q\)</span> on the left side</li>
+<li data-subcomponent="dropzone" for="rs-showing-separable-forms-chkpt-3_drag3" data-category="3">The final step is to ...</li>
+<li data-subcomponent="draggable" id="rs-showing-separable-forms-chkpt-3_drag4" data-category="4">check the equation is linear</li>
+<li data-subcomponent="draggable" id="rs-showing-separable-forms-chkpt-3_drag5" data-category="4">integrate both sides</li>
+<li data-subcomponent="draggable" id="rs-showing-separable-forms-chkpt-3_drag6" data-category="4">divide both sides by <span class="process-math">\(3q\)</span>
+</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Checkpoint 4: Steps to Show Separable"><a href="#showing-separable-forms-chkpt-3" title="Copy heading and permalink for Checkpoint 4: Steps to Show Separable" aria-label="Copy heading and permalink for Checkpoint 4: Steps to Show Separable">🔗</a></div></article></details><details id="sov-method-cyu-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sort the Steps in Order.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-sov-method-cyu-2">
+<span data-subcomponent="question"><div class="para logical" id="sov-method-cyu-2-2-1">
+<div class="para">Suppose you want to use separation of variables method to determine the general solution of the differential equation</div>
+<div class="displaymath process-math" id="chkpt-sov-method-examples-1-eqn">
+\begin{equation}
+\frac{dq}{dt} - 3qt^2 = 2q\text{.}\tag{0}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sov-method-cyu-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sov-method-cyu-2-2-2">Match the scrambled tasks (on the left) to the task order (on the right) that it should be performed to use this method.<div class="autopermalink" data-description="Paragraph"><a href="#sov-method-cyu-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><li data-subcomponent="draggable" id="rs-sov-method-cyu-2_drag1" data-category="1"><div class="para" id="sov-method-cyu-2-3-1-1-1">Equation is 1st-order ✅</div></li>
+<li data-subcomponent="dropzone" for="rs-sov-method-cyu-2_drag1" data-category="1"><div class="para" id="sov-method-cyu-2-3-1-2-1"><span class="process-math">\(\text{Task 1}\)</span></div></li>
+<li data-subcomponent="draggable" id="rs-sov-method-cyu-2_drag2" data-category="2"><div class="para" id="sov-method-cyu-2-3-2-1-1"><span class="process-math">\(\displaystyle \frac{dq}{dt} = q(2 + 3t^2)\)</span></div></li>
+<li data-subcomponent="dropzone" for="rs-sov-method-cyu-2_drag2" data-category="2"><div class="para" id="sov-method-cyu-2-3-2-2-1"><span class="process-math">\(\text{Task 2}\)</span></div></li>
+<li data-subcomponent="draggable" id="rs-sov-method-cyu-2_drag3" data-category="3"><div class="para" id="sov-method-cyu-2-3-3-1-1"><span class="process-math">\(\displaystyle \frac{1}{q}\ dq = (2 + 3t^2)\ dt\)</span></div></li>
+<li data-subcomponent="dropzone" for="rs-sov-method-cyu-2_drag3" data-category="3"><div class="para" id="sov-method-cyu-2-3-3-2-1"><span class="process-math">\(\text{Task 3}\)</span></div></li>
+<li data-subcomponent="draggable" id="rs-sov-method-cyu-2_drag4" data-category="4"><div class="para" id="sov-method-cyu-2-3-4-1-1"><span class="process-math">\(\displaystyle \int \frac{1}{q} dq = \int (2 + 3t^2) dt\)</span></div></li>
+<li data-subcomponent="dropzone" for="rs-sov-method-cyu-2_drag4" data-category="4"><div class="para" id="sov-method-cyu-2-3-4-2-1"><span class="process-math">\(\text{Task 4}\)</span></div></li>
+<li data-subcomponent="draggable" id="rs-sov-method-cyu-2_drag5" data-category="5"><div class="para" id="sov-method-cyu-2-3-5-1-1"><span class="process-math">\(\displaystyle \ln|q| = 2t^2 + t^3 + c\)</span></div></li>
+<li data-subcomponent="dropzone" for="rs-sov-method-cyu-2_drag5" data-category="5"><div class="para" id="sov-method-cyu-2-3-5-2-1"><span class="process-math">\(\text{Task 5}\)</span></div></li>
+<li data-subcomponent="draggable" id="rs-sov-method-cyu-2_drag6" data-category="6"><div class="para" id="sov-method-cyu-2-3-6-1-1"><span class="process-math">\(\displaystyle q = c e\vphantom{|}^{\large 2t^2 + t^3}\)</span></div></li>
+<li data-subcomponent="dropzone" for="rs-sov-method-cyu-2_drag6" data-category="6"><div class="para" id="sov-method-cyu-2-3-6-2-1"><span class="process-math">\(\text{Task 6}\)</span></div></li>
+</ul></div></div>
+<div class="autopermalink" data-description="Checkpoint 5: Sort the Steps in Order"><a href="#sov-method-cyu-2" title="Copy heading and permalink for Checkpoint 5: Sort the Steps in Order" aria-label="Copy heading and permalink for Checkpoint 5: Sort the Steps in Order">🔗</a></div></article></details><details id="c3-warm-ups-ww-1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Determine the Separable Form.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="introduction" id="c3-warm-ups-ww-1-2">
+<div class="para logical" id="c3-warm-ups-ww-1-2-1">
+<div class="para">Write each differential equation in the separable form</div>
+<div class="displaymath process-math" id="c3-warm-ups-ww-1-2-1-1">
+\begin{equation*}
+\frac{dy}{dx} = f(x)\cdot g(y)\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#c3-warm-ups-ww-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="c3-warm-ups-ww-1-2-2">
+<em class="emphasis">Type your answer for <span class="process-math">\(f(x)\)</span> into the left box and <span class="process-math">\(g(y)\)</span> into the right box.</em><div class="autopermalink" data-description="Paragraph"><a href="#c3-warm-ups-ww-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div id="c2-cr-ww-01-id" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="1" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="generated" data-problemSource="Test_Environment/6-Determine_the_Separable_Form.pg" data-documentID="" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('c2-cr-ww-01-id')">Activate</button></div>
+<div class="problem-contents">
+<div class="para logical" id="extracted-c2-cr-ww-01-id-1-1-1">
+<ol class="lower-alpha ol-marker-1" id="extracted-c2-cr-ww-01-id-1-1-1-1">
+<li id="extracted-c2-cr-ww-01-id-1-1-1-1-1">
+<div class="para" id="extracted-c2-cr-ww-01-id-1-1-1-1-1-1">
+<span class="process-math">\(\quad\displaystyle	\frac{dy}{dx} - y\cos(x) = y
+\quad\implies\quad	\frac{dy}{dx} =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-1-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6.a"><a href="#extracted-c2-cr-ww-01-id-1-1-1-1-1" title="Copy heading and permalink for Item 6.a" aria-label="Copy heading and permalink for Item 6.a">🔗</a></div>
+</li>
+<li id="extracted-c2-cr-ww-01-id-1-1-1-1-2">
+<div class="para" id="extracted-c2-cr-ww-01-id-1-1-1-1-2-1">
+<span class="process-math">\(\quad\displaystyle	x^2y + x^4\frac{dy}{dx} = x^2
+\quad\implies\quad	\frac{dy}{dx} =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-1-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6.b"><a href="#extracted-c2-cr-ww-01-id-1-1-1-1-2" title="Copy heading and permalink for Item 6.b" aria-label="Copy heading and permalink for Item 6.b">🔗</a></div>
+</li>
+<li id="extracted-c2-cr-ww-01-id-1-1-1-1-3">
+<div class="para" id="extracted-c2-cr-ww-01-id-1-1-1-1-3-1">
+<span class="process-math">\(\quad\displaystyle	xy\frac{dy}{dx} = e^xy^2 - e^x
+\quad\implies\quad	\frac{dy}{dx} =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-1-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6.c"><a href="#extracted-c2-cr-ww-01-id-1-1-1-1-3" title="Copy heading and permalink for Item 6.c" aria-label="Copy heading and permalink for Item 6.c">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-graph-MVT-1-v1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="APEX-PROTEUS-graph-MVT-1-v1-2-2">Explain, using the [REF] how these two methods are related. In particular, if aircraft patrol can only measure average speed, how can an officer be certain that a driver was speeding?<div class="autopermalink" data-description="Paragraph"><a href="#APEX-PROTEUS-graph-MVT-1-v1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Checkpoint 5: PROTEUS EXERCISE"><a href="#APEX-PROTEUS-graph-MVT-1-v1" title="Copy heading and permalink for Checkpoint 5: PROTEUS EXERCISE" aria-label="Copy heading and permalink for Checkpoint 5: PROTEUS EXERCISE">🔗</a></div></article></details><div class="autopermalink" data-description="Chapter 1: PROTEUS Newton’s Method Reading Questions"><a href="#root-1-2-2" title="Copy heading and permalink for Chapter 1: PROTEUS Newton’s Method Reading Questions" aria-label="Copy heading and permalink for Chapter 1: PROTEUS Newton’s Method Reading Questions">🔗</a></div></section></div>
+<div class="solutions">
+<details id="extracted-c2-cr-ww-01-id-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c2-cr-ww-01-id-1-2-1">
+<span class="process-math">\(1+\cos\mathopen{}\left(x\right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 6.1"><a href="#extracted-c2-cr-ww-01-id-1-2" title="Copy heading and permalink for Answer 6.1" aria-label="Copy heading and permalink for Answer 6.1">🔗</a></div>
+</div></details><details id="extracted-c2-cr-ww-01-id-1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c2-cr-ww-01-id-1-3-1">
+<span class="process-math">\(y\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 6.2"><a href="#extracted-c2-cr-ww-01-id-1-3" title="Copy heading and permalink for Answer 6.2" aria-label="Copy heading and permalink for Answer 6.2">🔗</a></div>
+</div></details><details id="extracted-c2-cr-ww-01-id-1-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c2-cr-ww-01-id-1-4-1">
+<span class="process-math">\(\frac{1}{x^{2}}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 6.3"><a href="#extracted-c2-cr-ww-01-id-1-4" title="Copy heading and permalink for Answer 6.3" aria-label="Copy heading and permalink for Answer 6.3">🔗</a></div>
+</div></details><details id="extracted-c2-cr-ww-01-id-1-5" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c2-cr-ww-01-id-1-5-1">
+<span class="process-math">\(1-y\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 6.4"><a href="#extracted-c2-cr-ww-01-id-1-5" title="Copy heading and permalink for Answer 6.4" aria-label="Copy heading and permalink for Answer 6.4">🔗</a></div>
+</div></details><details id="extracted-c2-cr-ww-01-id-1-6" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c2-cr-ww-01-id-1-6-1">
+<span class="process-math">\(\frac{e^{x}}{x}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 6.5"><a href="#extracted-c2-cr-ww-01-id-1-6" title="Copy heading and permalink for Answer 6.5" aria-label="Copy heading and permalink for Answer 6.5">🔗</a></div>
+</div></details><details id="extracted-c2-cr-ww-01-id-1-7" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c2-cr-ww-01-id-1-7-1">
+<span class="process-math">\(\frac{y^{2}-1}{y}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c2-cr-ww-01-id-1-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 6.6"><a href="#extracted-c2-cr-ww-01-id-1-7" title="Copy heading and permalink for Answer 6.6" aria-label="Copy heading and permalink for Answer 6.6">🔗</a></div>
+</div></details>
+</div>
+</div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 6: Determine the Separable Form"><a href="#c3-warm-ups-ww-1" title="Copy heading and permalink for Checkpoint 6: Determine the Separable Form" aria-label="Copy heading and permalink for Checkpoint 6: Determine the Separable Form">🔗</a></div></article></details><details id="c3-warm-ups-ordering-1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reorder the Steps.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone parsons_section" style="max-width: none;"><div data-component="parsons" class="parsons" id="rs-c3-warm-ups-ordering-1">
+<div class="parsons_question parsons-text"><div class="para logical" id="c3-warm-ups-ordering-1-2-1">
+<div class="para">Reorder the steps required to solve the differential equation,</div>
+<div class="displaymath process-math" id="c3-warm-ups-ordering-1-2-1-1">
+\begin{equation*}
+\frac{dy}{dx} - y\cos(x) = y\text{,}
+\end{equation*}
+</div>
+<div class="para">using the separation of variables method.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#c3-warm-ups-ordering-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<pre class="parsonsblocks" data-question_label="" style="visibility: hidden;" data-language="natural" data-noindent="true"><div class="para" id="c3-warm-ups-ordering-1-3-1-1">Check for 1st-order.</div>
+---
+<div class="para" id="c3-warm-ups-ordering-1-3-2-1"><span class="process-math">\(\dfrac{dy}{dx} = y + y\cos(x) \)</span></div>
+---
+<div class="para" id="c3-warm-ups-ordering-1-3-3-1"><span class="process-math">\(\dfrac{dy}{dx} = (1 + \cos(x))y \)</span></div>
+---
+<div class="para" id="c3-warm-ups-ordering-1-3-4-1"><span class="process-math">\(\dfrac{1}{y} dy = (1 + \cos(x))dx \)</span></div>
+---
+<div class="para" id="c3-warm-ups-ordering-1-3-5-1"><span class="process-math">\(\displaystyle \int \frac{1}{y} dy = \int (1 + \cos(x))dx \)</span></div>
+---
+<div class="para" id="c3-warm-ups-ordering-1-3-6-1"><span class="process-math">\(\displaystyle \ln|y| = x + \sin(x) + C \)</span></div>
+---
+<div class="para" id="c3-warm-ups-ordering-1-3-7-1"><span class="process-math">\(\displaystyle y = Ce^{x + \sin(x)} \)</span></div></pre>
+</div></div></div>
+<div class="autopermalink" data-description="Checkpoint 7: Reorder the Steps"><a href="#c3-warm-ups-ordering-1" title="Copy heading and permalink for Checkpoint 7: Reorder the Steps" aria-label="Copy heading and permalink for Checkpoint 7: Reorder the Steps">🔗</a></div></article></details><details id="c3-warm-ups-click-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Step-By-Step Initial-Valued Problem.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone clickablearea_section"><div data-component="clickablearea" data-question_label="" style="visibility: hidden;" id="rs-c3-warm-ups-click-2">
+<span data-question=""><div class="para" id="c3-warm-ups-click-2-2-1">Use separation of variables to solve the initial value problem<div class="autopermalink" data-description="Paragraph"><a href="#c3-warm-ups-click-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="c3-warm-ups-click-2-2-2">
+\begin{equation*}
+\frac{du}{dy} - u^2y = u^2, \hspace{1cm} u(0) = 5\text{.}
+\end{equation*}
+</div></span><span data-feedback=""></span><ol class="decimal" id="c3-warm-ups-click-2-3-1">
+<li id="c3-warm-ups-click-2-3-1-1"><div class="para" id="c3-warm-ups-click-2-3-1-1-1">Select the variable that you are solving for: <span class="process-math">\(\quad\)</span> <span data-incorrect=""><span class="process-math">\(\, y \,\)</span></span> <span class="process-math">\(\quad\)</span> <span data-correct=""><span class="process-math">\(\, u \,\)</span></span>
+</div></li>
+<li id="c3-warm-ups-click-2-3-1-2"><div class="para" id="c3-warm-ups-click-2-3-1-2-1">Select the order of the equation: <span class="process-math">\(\quad\)</span> <span data-correct=""><span class="process-math">\(\, 1 \,\)</span></span> <span class="process-math">\(\quad\)</span> <span data-incorrect=""><span class="process-math">\(\, 2 \,\)</span></span> <span class="process-math">\(\quad\)</span> <span data-incorrect=""><span class="process-math">\(\, 3 \,\)</span></span> <span class="process-math">\(\quad\)</span> <span data-incorrect=""><span class="process-math">\(\, 4 \,\)</span></span>
+</div></li>
+<li id="c3-warm-ups-click-2-3-1-3">
+<div class="para" id="c3-warm-ups-click-2-3-1-3-1">Select the correct separable form:</div>
+<div class="para" id="c3-warm-ups-click-2-3-1-3-2"><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-incorrect=""><span class="process-math">\(\dfrac{du}{dy} = u^2(y-1)	\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-incorrect=""><span class="process-math">\(\dfrac{du}{dy} = u^2y		\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-correct=""><span class="process-math">\(\dfrac{du}{dy} = u^2(1+y)	\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines"><span data-incorrect=""><span class="process-math">\(\dfrac{du}{dy} = -y		\)</span></span></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+</table></div></div>
+</li>
+<li id="c3-warm-ups-click-2-3-1-4">
+<div class="para" id="c3-warm-ups-click-2-3-1-4-1">Select the next step following the correct answer to (c).</div>
+<div class="para" id="c3-warm-ups-click-2-3-1-4-2"><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-incorrect=""><span class="process-math">\(\displaystyle\frac{1}{y+1}dy = u^2du	\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-correct=""><span class="process-math">\(\displaystyle\frac{1}{u^2}du = (y+1)dy	\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines"><span data-incorrect=""><span class="process-math">\(\displaystyle\frac{1}{y}dy = u^2 du		\)</span></span></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+</table></div></div>
+</li>
+<li id="c3-warm-ups-click-2-3-1-5">
+<div class="para" id="c3-warm-ups-click-2-3-1-5-1">Select the result after integrating correct answer to (d).</div>
+<div class="para" id="c3-warm-ups-click-2-3-1-5-2"><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-incorrect=""><span class="process-math">\(\displaystyle\ln|u^2| = \frac{y^2}{2} + y + c		\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-incorrect=""><span class="process-math">\(\displaystyle\frac{1}{u} = \frac{y^2}{2} + y + c	\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\displaystyle-\frac{1}{u} = \frac{y^2}{2} + y + c	\)</span></span></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+</table></div></div>
+</li>
+<li id="c3-warm-ups-click-2-3-1-6">
+<div class="para" id="c3-warm-ups-click-2-3-1-6-1">Select the correct general solution.</div>
+<div class="para" id="c3-warm-ups-click-2-3-1-6-2"><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-correct=""><span class="process-math">\(\displaystyle u = \left(-\frac{y^2}{2} + y + c\right)^{-1}	\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-incorrect=""><span class="process-math">\(\displaystyle u = c + \left(-\frac{y^2}{2} + y\right)^{-1}	\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-incorrect=""><span class="process-math">\(\displaystyle u = ce^{\large y^2 + y}						\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+</table></div></div>
+</li>
+<li id="c3-warm-ups-click-2-3-1-7">
+<div class="para" id="c3-warm-ups-click-2-3-1-7-1">Select the correct particular solution.</div>
+<div class="para" id="c3-warm-ups-click-2-3-1-7-2"><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-incorrect=""><span class="process-math">\(\displaystyle u = \left(-\frac{y^2}{2} + y + 5\right)^{-1}			\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines">
+<span data-correct=""><span class="process-math">\(\displaystyle u = \left(-\frac{y^2}{2} + y + \frac15\right)^{-1}	\)</span></span><span class="process-math">\(\quad\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines"><span data-incorrect=""><span class="process-math">\(\displaystyle u = 5e^{\large y^2 + y }								\)</span></span></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+</table></div></div>
+</li>
+</ol>
+</div></div></div>
+<div class="autopermalink" data-description="Checkpoint 8: Step-By-Step Initial-Valued Problem"><a href="#c3-warm-ups-click-2" title="Copy heading and permalink for Checkpoint 8: Step-By-Step Initial-Valued Problem" aria-label="Copy heading and permalink for Checkpoint 8: Step-By-Step Initial-Valued Problem">🔗</a></div></article></details><details id="c3-warm-ups-ww-4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Find the General Solution.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="introduction" id="c3-warm-ups-ww-4-2"><div class="para logical" id="c3-warm-ups-ww-4-2-1">
+<div class="para">Use separation of variables to find the general solution of the differential equation:</div>
+<div class="displaymath process-math" id="c3-warm-ups-ww-4-2-1-1">
+\begin{equation*}
+\frac{dy}{dx} - y\cos(x) = y
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#c3-warm-ups-ww-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<div id="c3-step-by-step-02-ww" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="2" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="generated" data-problemSource="Test_Environment/9-Find_the_General_Solution.pg" data-documentID="" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('c3-step-by-step-02-ww')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-1-1">Give the order and separable form:<div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="extracted-c3-step-by-step-02-ww-1-1-2">
+<ul class="disc" id="extracted-c3-step-by-step-02-ww-1-1-2-1">
+<li id="extracted-c3-step-by-step-02-ww-1-1-2-1-1">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-1-2-1-1-1">order: <span class="fillin underline" role="img" aria-label="5-character blank" style="width: 2.272727272727273em;"></span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#extracted-c3-step-by-step-02-ww-1-1-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="extracted-c3-step-by-step-02-ww-1-1-2-1-2">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-1-2-1-2-1">
+<span class="process-math">\(\dfrac{dy}{dx} = f(x) \cdot g(y) = \big(\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(\big) \cdot \big(\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> <span class="process-math">\(\big)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#extracted-c3-step-by-step-02-ww-1-1-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="extracted-c3-step-by-step-02-ww-1-1-3">After separating the variables and integrating both sides, we get:<div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="extracted-c3-step-by-step-02-ww-1-1-4">
+<ul class="disc" id="extracted-c3-step-by-step-02-ww-1-1-4-1"><li id="extracted-c3-step-by-step-02-ww-1-1-4-1-1">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-1-4-1-1-1">
+<span class="process-math">\(\displaystyle\int\)</span><span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span><span class="process-math">\(\displaystyle dy = \int\)</span><span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span><span class="process-math">\(dx\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-1-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#extracted-c3-step-by-step-02-ww-1-1-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li></ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="extracted-c3-step-by-step-02-ww-1-1-5">After computing these integrals, solving for <span class="process-math">\(y\text{,}\)</span> and combining constants we arrive at the following general solution:<div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>  <div class="tabular-box natural-width"><table class="tabular"><tr><td class="r m b0 r0 l0 t0 lines">
+<span class="process-math">\(y(x) =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span>
+</td></tr></table></div> <div class="para" id="extracted-c3-step-by-step-02-ww-1-1-7">
+<em class="emphasis">Use <span class="process-math">\(c\)</span> for the final combined constant.</em><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="extracted-c3-step-by-step-02-ww-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-2-1">
+<span class="process-math">\(1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 9.1"><a href="#extracted-c3-step-by-step-02-ww-1-2" title="Copy heading and permalink for Answer 9.1" aria-label="Copy heading and permalink for Answer 9.1">🔗</a></div>
+</div></details><details id="extracted-c3-step-by-step-02-ww-1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-3-1">
+<span class="process-math">\(1+\cos\mathopen{}\left(x\right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 9.2"><a href="#extracted-c3-step-by-step-02-ww-1-3" title="Copy heading and permalink for Answer 9.2" aria-label="Copy heading and permalink for Answer 9.2">🔗</a></div>
+</div></details><details id="extracted-c3-step-by-step-02-ww-1-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-4-1">
+<span class="process-math">\(y\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 9.3"><a href="#extracted-c3-step-by-step-02-ww-1-4" title="Copy heading and permalink for Answer 9.3" aria-label="Copy heading and permalink for Answer 9.3">🔗</a></div>
+</div></details><details id="extracted-c3-step-by-step-02-ww-1-5" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-5-1">
+<span class="process-math">\(\frac{1}{y}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 9.4"><a href="#extracted-c3-step-by-step-02-ww-1-5" title="Copy heading and permalink for Answer 9.4" aria-label="Copy heading and permalink for Answer 9.4">🔗</a></div>
+</div></details><details id="extracted-c3-step-by-step-02-ww-1-6" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-6-1">
+<span class="process-math">\(1+\cos\mathopen{}\left(x\right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 9.5"><a href="#extracted-c3-step-by-step-02-ww-1-6" title="Copy heading and permalink for Answer 9.5" aria-label="Copy heading and permalink for Answer 9.5">🔗</a></div>
+</div></details><details id="extracted-c3-step-by-step-02-ww-1-7" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-c3-step-by-step-02-ww-1-7-1">
+<span class="process-math">\(ce^{x+\sin\mathopen{}\left(x\right)}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-c3-step-by-step-02-ww-1-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Answer 9.6"><a href="#extracted-c3-step-by-step-02-ww-1-7" title="Copy heading and permalink for Answer 9.6" aria-label="Copy heading and permalink for Answer 9.6">🔗</a></div>
+</div></details>
+</div>
+</div>
+</div>
+<div class="autopermalink" data-description="Checkpoint 9: Find the General Solution"><a href="#c3-warm-ups-ww-4" title="Copy heading and permalink for Checkpoint 9: Find the General Solution" aria-label="Copy heading and permalink for Checkpoint 9: Find the General Solution">🔗</a></div></article></details><details id="if-identify-equations" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Identifying Equations for the IF Method.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone clickablearea_section"><div data-component="clickablearea" data-question_label="" style="visibility: hidden;" id="rs-if-identify-equations">
+<span data-question=""><div class="para" id="if-identify-equations-2-1">Which of the following differential equations can be solved using the integrating factor method?<div class="autopermalink" data-description="Paragraph"><a href="#if-identify-equations-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><span data-feedback=""><div class="para" id="if-identify-equations-5-1">Four of these equations are linear and first-order—they can be solved by the integrating factor method.</div></span><div class="tabular-box natural-width"><table class="tabular">
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(y' + 2y = 3x\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\dfrac{y'}{t^2} + y = 17t\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-incorrect=""><span class="process-math">\(y'' + 2x y = 0\)</span></span></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><span data-incorrect=""><span class="process-math">\(y' + y^2 = 17t\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\dfrac{y'}{t} + y = 17t\)</span></span></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><span data-correct=""><span class="process-math">\(\cos x \, y = y' - e^x\)</span></span></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\)</span></td></tr>
+</table></div>
+</div></div></div>
+<div class="solutions"><details id="if-identify-equations-4" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para" id="if-identify-equations-4-1">A first-order linear equation has <span class="process-math">\(y\)</span> and <span class="process-math">\(y'\)</span> only to the first power and not inside nonlinear functions.<div class="autopermalink" data-description="Paragraph"><a href="#if-identify-equations-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 10.1"><a href="#if-identify-equations-4" title="Copy heading and permalink for Hint 10.1" aria-label="Copy heading and permalink for Hint 10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Checkpoint 10: Identifying Equations for the IF Method"><a href="#if-identify-equations" title="Copy heading and permalink for Checkpoint 10: Identifying Equations for the IF Method" aria-label="Copy heading and permalink for Checkpoint 10: Identifying Equations for the IF Method">🔗</a></div></article></details><details id="whats-a-numerical-soln-chkpt-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Recognizing a Numerical Solution.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section">
+<div class="exercise-statement">When you say you’ve found a “numerical solution” to an initial value problem, what do you actually have?</div>
+<ul data-component="multiplechoice" class="exercise-interactives" id="rs-whats-a-numerical-soln-chkpt-2" data-multipleanswers="false" data-random="">
+<li data-component="answer" id="rs-whats-a-numerical-soln-chkpt-2_opt_a" data-correct="">A list of values approximating <span class="process-math">\(y(t)\)</span> at specific times</li>
+<li data-component="feedback" id="rs-whats-a-numerical-soln-chkpt-2_opt_a">Correct—numerical solutions are tables of approximate values, not formulas.</li>
+<li data-component="answer" id="rs-whats-a-numerical-soln-chkpt-2_opt_b">A formula expressing <span class="process-math">\(y(t)\)</span> using functions like <span class="process-math">\(\sin t\)</span> or <span class="process-math">\(e^t\)</span>
+</li>
+<li data-component="feedback" id="rs-whats-a-numerical-soln-chkpt-2_opt_b">No, that describes an analytic solution.</li>
+<li data-component="answer" id="rs-whats-a-numerical-soln-chkpt-2_opt_c">An exact solution valid for all <span class="process-math">\(t\)</span>
+</li>
+<li data-component="feedback" id="rs-whats-a-numerical-soln-chkpt-2_opt_c">No, numerical solutions are approximations.</li>
+<li data-component="answer" id="rs-whats-a-numerical-soln-chkpt-2_opt_d">A graph showing all possible solutions</li>
+<li data-component="feedback" id="rs-whats-a-numerical-soln-chkpt-2_opt_d">No, that describes a slope field, not a numerical solution.</li>
+</ul>
+</div></div>
+<div class="autopermalink" data-description="Checkpoint 11: Recognizing a Numerical Solution"><a href="#whats-a-numerical-soln-chkpt-2" title="Copy heading and permalink for Checkpoint 11: Recognizing a Numerical Solution" aria-label="Copy heading and permalink for Checkpoint 11: Recognizing a Numerical Solution">🔗</a></div></article></details><details id="eulers-method-chkpt-1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Checkpoint</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Match Euler’s Method Parts to their Meaning.</span>
+</h2></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-eulers-method-chkpt-1">
+<span data-subcomponent="question"><div class="para" id="eulers-method-chkpt-1-2-1">Assume the current approximation using Euler’s Method is denoted by <span class="process-math">\(y_k\text{.}\)</span> In this context, match the mathematical expression with its meaning.<div class="autopermalink" data-description="Paragraph"><a href="#eulers-method-chkpt-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></span><span data-subcomponent="feedback"><div class="para" id="eulers-method-chkpt-1-3-1">These pairings are essential when converting a piecewise function into unit step form. The form you choose depends entirely on where each piece is active.</div></span><li data-subcomponent="draggable" id="rs-eulers-method-chkpt-1_drag1" data-category="1"><span class="process-math">\(y_{k+1}\)</span></li>
+<li data-subcomponent="dropzone" for="rs-eulers-method-chkpt-1_drag1" data-category="1">The <span class="process-math">\(y\)</span> value of the next approximation.</li>
+<li data-subcomponent="draggable" id="rs-eulers-method-chkpt-1_drag2" data-category="2"><span class="process-math">\(y_{k-1}\)</span></li>
+<li data-subcomponent="dropzone" for="rs-eulers-method-chkpt-1_drag2" data-category="2">The <span class="process-math">\(y\)</span> value of the previous approximation.</li>
+<li data-subcomponent="draggable" id="rs-eulers-method-chkpt-1_drag3" data-category="3"><span class="process-math">\(h\)</span></li>
+<li data-subcomponent="dropzone" for="rs-eulers-method-chkpt-1_drag3" data-category="3">The distance between <span class="process-math">\(t_k\)</span> and <span class="process-math">\(t_{k+1}\text{.}\)</span>
+</li>
+<li data-subcomponent="draggable" id="rs-eulers-method-chkpt-1_drag4" data-category="4"><span class="process-math">\(f(t_k, y_k)\)</span></li>
+<li data-subcomponent="dropzone" for="rs-eulers-method-chkpt-1_drag4" data-category="4">The slope of the solution at the current approximation.</li>
+<li data-subcomponent="draggable" id="rs-eulers-method-chkpt-1_drag5" data-category="5"><span class="process-math">\(t_k\)</span></li>
+<li data-subcomponent="dropzone" for="rs-eulers-method-chkpt-1_drag5" data-category="5">The <span class="process-math">\(t\)</span> value of the current approximation.</li>
+<li data-subcomponent="draggable" id="rs-eulers-method-chkpt-1_drag6" data-category="6"><span class="process-math">\(h \cdot f(t_k, y_k)\)</span></li>
+<li data-subcomponent="dropzone" for="rs-eulers-method-chkpt-1_drag6" data-category="6">The rise (or fall) in the <span class="process-math">\(y\)</span> value from the current approximation to the next approximation.</li>
+</ul></div></div>
+<div class="autopermalink" data-description="Checkpoint 12: Match Euler’s Method Parts to their Meaning"><a href="#eulers-method-chkpt-1" title="Copy heading and permalink for Checkpoint 12: Match Euler’s Method Parts to their Meaning" aria-label="Copy heading and permalink for Checkpoint 12: Match Euler’s Method Parts to their Meaning">🔗</a></div></article></details><div class="autopermalink" data-description="Chapter 1: PROTEUS Differential Equations Chapter Reading Questions"><a href="#root-1-2-2" title="Copy heading and permalink for Chapter 1: PROTEUS Differential Equations Chapter Reading Questions" aria-label="Copy heading and permalink for Chapter 1: PROTEUS Differential Equations Chapter Reading Questions">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="root-1-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="root-1-2-3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="root-1-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-representations>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-c2-cr-ww-01-id" ww-id="c2-cr-ww-01-id">
+    <static seed="1">
+      <statement><p><ol label="a.">
+<li>
+<p><m>\quad\displaystyle	\frac{dy}{dx} - y\cos(x) = y
+                \quad\implies\quad	\frac{dy}{dx} =</m> <fillin characters="10" name="AnSwEr0001"/> <fillin characters="10" name="AnSwEr0002"/></p>
+</li>
+<li>
+<p><m>\quad\displaystyle	x^2y + x^4\frac{dy}{dx} = x^2
+                \quad\implies\quad	\frac{dy}{dx} =</m> <fillin characters="10" name="AnSwEr0003"/> <fillin characters="10" name="AnSwEr0004"/></p>
+</li>
+<li>
+<p><m>\quad\displaystyle	xy\frac{dy}{dx} = e^xy^2 - e^x
+                \quad\implies\quad	\frac{dy}{dx} =</m> <fillin characters="10" name="AnSwEr0005"/> <fillin characters="10" name="AnSwEr0006"/></p>
+</li>
+</ol></p>
+</statement>
+      <answer>
+        <p>
+          <m>1+\cos\mathopen{}\left(x\right)</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>y</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{1}{x^{2}}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1-y</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{e^{x}}{x}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{y^{2}-1}{y}</m>
+        </p>
+      </answer>
+    </static>
+    <rendering-data problemSource="Test_Environment/6-Determine_the_Separable_Form.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###       on 2025-11-20T16:43:11-05:00       
+###   A recent stable commit (2022-07-01):   
+### 6c761d3dba23af92cba35001c852aac04ae99a5f 
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Problem1(6)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "contextForm.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+COMMENT('Show a differential equation is separable.');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+Context()->variables->add(y => 'Real');
+$f1 = Formula("1 + cos(x)");
+$g1 = Formula("y");
+$f2 = Formula("1/x^2");
+$g2 = Formula("1 - y");
+$f3 = Formula("e^(x)/x");
+$g3 = Formula("(y^2 - 1)/y");
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+a.  [`
+                \quad\displaystyle	\frac{dy}{dx} - y\cos(x) = y
+                \quad\implies\quad	\frac{dy}{dx} =
+              `] [_]{$f1}{10} [_]{$g1}{10}
+
+a.  [`
+                \quad\displaystyle	x^2y + x^4\frac{dy}{dx} = x^2
+                \quad\implies\quad	\frac{dy}{dx} =
+              `] [_]{$f2}{10} [_]{$g2}{10}
+
+a.  [`
+                \quad\displaystyle	xy\frac{dy}{dx} = e^xy^2 - e^x
+                \quad\implies\quad	\frac{dy}{dx} =
+              `] [_]{$f3}{10} [_]{$g3}{10}
+
+END_PGML
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-c3-step-by-step-02-ww" ww-id="c3-step-by-step-02-ww">
+    <static seed="2">
+      <statement><p>Give the order and separable form:</p>
+<p><ul label="disc">
+<li>
+<p>order: <fillin characters="5" name="AnSwEr0001"/></p>
+</li>
+<li>
+<p><m>\dfrac{dy}{dx} = f(x) \cdot g(y) = \big(</m> <fillin characters="10" name="AnSwEr0002"/> <m>\big) \cdot \big(</m> <fillin characters="10" name="AnSwEr0003"/> <m>\big)</m></p>
+</li>
+</ul></p>
+<p>After separating the variables and integrating both sides, we get:</p>
+<p><ul label="disc">
+<li>
+<p><m>\displaystyle\int</m><fillin characters="10" name="AnSwEr0004"/><m>\displaystyle dy = \int</m><fillin characters="10" name="AnSwEr0005"/><m>dx</m></p>
+</li>
+</ul></p>
+<p>After computing these integrals, solving for <m>y\text{,}</m> and combining constants we arrive at the following general solution:</p>
+<!-- PTX:WARNING: PGML wanted to center align here. -->
+<tabular>
+<col halign="right"/>
+<row>
+<cell><m>y(x) =</m> <fillin characters="10" name="AnSwEr0006"/></cell>
+</row>
+</tabular>
+<p><em>Use <m>c</m> for the final combined constant.</em></p>
+</statement>
+      <answer>
+        <p>
+          <m>1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1+\cos\mathopen{}\left(x\right)</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>y</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{1}{y}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1+\cos\mathopen{}\left(x\right)</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>ce^{x+\sin\mathopen{}\left(x\right)}</m>
+        </p>
+      </answer>
+    </static>
+    <rendering-data problemSource="Test_Environment/9-Find_the_General_Solution.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###       on 2025-11-20T16:43:11-05:00       
+###   A recent stable commit (2022-07-01):   
+### 6c761d3dba23af92cba35001c852aac04ae99a5f 
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Problem1(9)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "niceTables.pl",
+  "AnswerFormatHelp.pl",
+  "contextForm.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+COMMENT('Solve a separable DE using separation of variables.');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+Context()->variables->add(y => 'Real');
+Context()->variables->add(c => 'Real');
+$order = 1;
+$f = Formula("1+cos(x)");
+$g = Formula("y");
+$g_inv = Formula("1/y");
+$F = Formula("x+sin(x)");
+$G = Formula("ln|y|");
+$y_gen = Formula("c*e^(x+sin(x))");
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+Give the order and separable form:
+
+* order: [_]{$order}{5}
+* [`\dfrac{dy}{dx} = f(x) \cdot g(y) = \big(`] [_]{$f}{10} [`\big) \cdot \big(`] [_]{$g}{10} [`\big)`]
+
+After separating the variables and integrating both sides, we get:
+
+* [`\displaystyle\int`][_]{$g_inv}{10}[`\displaystyle dy = \int `][_]{$f}{10}[`dx`]
+
+After computing these integrals, solving for [`y\text{,}`] and combining constants we arrive at the following general solution:
+
+>> [@DataTable(
+  [
+    [PGML('[`y(x) = `] [_]{$y_gen}{10}'),
+    ],
+  ],
+      align => 'r',
+      valign => 'middle',);@]* <<
+
+_Use [`c`] for the final combined constant._
+
+END_PGML
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+  </webwork-reps>
+</webwork-representations>
