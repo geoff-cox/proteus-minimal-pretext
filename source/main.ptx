@@ -10,8 +10,9 @@
 		<!-- <xi:include href="hparsons-questions.ptx" /> -->
 		<!-- <xi:include href="fillin-questions.ptx" /> -->
 		<!-- <xi:include href="reveal-text.ptx" /> -->
-		<xi:include href="newtons-reading-questions.ptx" />
-		<xi:include href="differentials-reading-questions.ptx" />
+		<!-- <xi:include href="newtons-reading-questions.ptx" /> -->
+		<!-- <xi:include href="differentials-reading-questions.ptx" /> -->
+		<xi:include href="differential-eqn-proteus-questions.ptx" />
 
 	</book>
 	

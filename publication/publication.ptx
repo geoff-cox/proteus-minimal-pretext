@@ -190,7 +190,7 @@
       />-->
 
     <!-- Use the tabbed viewer for tasks in exercises. "project" and "reading" can be added to the list of types in the @tabbed-tasks attribute (but not worksheet). -->
-      <!--<exercises tabbed-tasks="inline divisional"/>-->
+      <exercises tabbed-tasks="inline divisional"/>
 
     <!-- Video privacy: the default value of "yes" disables certain tracking cookies for embedded videos. -->
       <!--<video privacy="yes"/>-->
