@@ -1,0 +1,106 @@
+<chapter><title> Proteus Chpt 7 Questions </title>
+
+	<exercise label="APEX-PROTEUS-shell-method-1-v1" component="proteus">
+		<title> Matching Question </title>
+
+		<statement>
+			<p>
+				Match the region on the left to the expression representing its area on the right. (one to many)
+			</p>
+			<p><m/></p>
+
+			<sidebyside widths="36% 64%">
+				<p><m>\color{RoyalBlue}\small\text{Region bounded by}\ </m></p>
+				<p><m>\color{BurntOrange}\small\text{Area of the Region}\ </m></p>
+			</sidebyside>
+		</statement>
+
+		<feedback>
+		</feedback>
+
+		<cardsort>
+
+			<match>
+				<premise> <m>y = \sqrt{x},\ y = 2,\ y</m>-axis </premise>
+				<response> <m>\displaystyle\int_{-2}^{2} (4 - y^2)\ dy</m></response>
+			</match>
+
+			<match><response> <m>\sfrac{8}{3}</m> </response></match>
+
+			<match><response> <m>\sfrac{9}{2}</m> </response></match>
+
+			<match>
+				<premise> <m>x = y^2,\ x = 4</m> </premise>
+				<response> <m>\sfrac{11}{3}</m> </response>
+			</match>
+
+			<match><response> <m>\displaystyle 2\int^{\frac{1+\sqrt{5}}{2}}_{\frac{1-\sqrt{5}}{2}} (y-1-\sqrt{y})\ dy</m> </response></match>
+
+			<match><response> <m>\displaystyle 2\int_{0}^{4} \sqrt{x}\ dx</m> </response></match>
+
+			<match>
+				<premise> <m>y = x + 1,\ y = x^2</m> </premise>
+				<response> <m>\displaystyle\int_0^3 (3y-y^2)\ dy</m> </response>
+			</match>
+
+			<match><response> <m>\displaystyle\int_{0}^{4} (2 - \sqrt{x})\ dx</m> </response></match>
+
+			<match>
+				<premise> <m>x = 3y - y^2,\ x = 0</m> </premise>
+				<response> <m>\displaystyle\int_{0}^{2} y^2\ dy</m> </response>
+			</match>
+
+			<match><response> <m>\displaystyle 2\int^{\frac{1+\sqrt{5}}{2}}_{\frac{1-\sqrt{5}}{2}} (x+1-x^2)\ dx</m> </response></match>
+
+			<match><response> <m>\sfrac{32}{3}</m> </response></match>
+
+			<match><response> <m>\sfrac{5\sqrt{5}}{3}</m> </response></match>
+		</cardsort>
+	</exercise>
+
+	<exercise label="APEX-PROTEUS-area-between-curves-1-v1" component="proteus">
+		<title>Multiple-Choice</title>
+		<statement>
+			<p>
+				The region between <m>y = x^2</m> and <m>y = 6 - x</m> is best integrated:
+			</p>
+		</statement>
+		<choices randomize="yes">
+			<choice correct="yes">
+				<statement><p>With respect to <m>x</m> (bottom ➜ top)</p></statement>
+			</choice>
+			<choice>
+				<statement><p>With respect to <m>y</m> (left ➜ right)</p></statement>
+			</choice>
+			<choice>
+				<statement><p>With respect to <m>x</m> (left ➜ right)</p></statement>
+			</choice>
+			<choice>
+				<statement><p>With respect to <m>y</m> (bottom ➜ top)</p></statement>
+			</choice>
+		</choices>
+	</exercise>
+
+	<exercise label="APEX-PROTEUS-area-between-curves-2-v1" component="proteus">
+		<title>Multiple-Choice</title>
+		<statement>
+			<p>
+				The region between <m>x = 2y</m> and <m>x = y^2-4y</m> is best integrated:
+			</p>
+		</statement>
+		<choices randomize="yes">
+			<choice>
+				<statement><p>With respect to <m>x</m> (bottom ➜ top)</p></statement>
+			</choice>
+			<choice correct="yes">
+				<statement><p>With respect to <m>y</m> (left ➜ right)</p></statement>
+			</choice>
+			<choice>
+				<statement><p>With respect to <m>x</m> (left ➜ right)</p></statement>
+			</choice>
+			<choice>
+				<statement><p>With respect to <m>y</m> (bottom ➜ top)</p></statement>
+			</choice>
+		</choices>
+	</exercise>
+</chapter>

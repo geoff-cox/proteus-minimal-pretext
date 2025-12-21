@@ -6,13 +6,12 @@
 
 	<book><title> Test Environment </title>
 
-		<!-- <xi:include href="matching-questions.ptx" /> -->
-		<!-- <xi:include href="hparsons-questions.ptx" /> -->
-		<!-- <xi:include href="fillin-questions.ptx" /> -->
-		<!-- <xi:include href="reveal-text.ptx" /> -->
-		<!-- <xi:include href="newtons-reading-questions.ptx" /> -->
-		<!-- <xi:include href="differentials-reading-questions.ptx" /> -->
+		<xi:include href="matching-questions.ptx" />
+		<xi:include href="hparsons-questions.ptx" />
+		<xi:include href="newtons-reading-questions.ptx" />
+		<xi:include href="differentials-reading-questions.ptx" />
 		<xi:include href="differential-eqn-proteus-questions.ptx" />
+		<xi:include href="chpt7-questions.ptx" />
 
 	</book>
 	
