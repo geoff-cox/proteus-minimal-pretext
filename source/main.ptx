@@ -12,6 +12,7 @@
 		<xi:include href="differentials-reading-questions.ptx" />
 		<xi:include href="differential-eqn-proteus-questions.ptx" />
 		<xi:include href="chpt7-questions.ptx" />
+		<xi:include href="chpt8-questions.ptx" />
 
 	</book>
 	

@@ -1,0 +1,183 @@
+<chapter>
+  <title> Proteus Chpt 8 Questions </title>
+
+  <!-- Question 1: Multiple-Choice -->
+  <exercise label="chkpt-ivp-solution">
+    <title>Initial Value Problem Solution</title>
+    <statement>
+      <p>
+        Which of the following is a solution to the initial value problem
+        <me>\frac{dy}{dx} = 2y - 10,\quad y(0) = 8</me>?
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+      <statement>
+        <p>
+          <m>y(x) = 3e^{2x} + 5</m>
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Correct! This function satisfies the differential equation since
+          <md>
+            <mrow> \frac{d}{dx}\left[3e^{2x} + 5\right] \amp = 2[3e^{2x} + 5]-10 </mrow>
+            <mrow>                              6e^{2x} \amp = 6e^{2x} + 10 - 10 </mrow>
+            <mrow>                              6e^{2x} \amp = 6e^{2x} \quad ✅ </mrow>
+          </md>
+          and the initial condition, since <m>y(0) = 3(1) + 5 = 8 \quad ✅</m>.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+          <m>y(x) = e^{2x} + 5</m>
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          This does not satisfy the initial condition since <m>y(0) = 1 + 5 = 6 \neq 8 \quad ❌</m>.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+        <m>y(x) = 2e^{2x} + 6</m>
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          This satisfies the initial condition since <m>y(0) = 2(1) + 6 = 8 \quad ✅</m>, but it does not satisfy the differential equation since
+          <md>
+            <mrow> \frac{d}{dx}\left[2e^{2x} + 6\right] \amp = 2[2e^{x} + 6]-10 </mrow>
+            <mrow>                              4e^{2x} \amp = 4e^{2x} + 12 - 10 </mrow>
+            <mrow>                              4e^{2x} \amp = 4e^{2x} + 2 \quad ❌ </mrow>
+          </md>.
+        </p>
+      </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <!-- Question 2: Multiple-Choice with Images -->
+  <exercise label="chkpt-slope-field-matching">
+    <title>Slope Field Identification</title>
+    <statement>
+      <p>
+        Which slope field corresponds to each of the following first-order differential equations?
+      </p>
+      <p>
+        Match: <m>\frac{dy}{dx} = x - y</m>
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+      <statement>
+        <p>
+          <image source="slopefield_1.png" width="50%"/>
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Compare the behavior of the slopes in this field with the equation <m>\frac{dy}{dx} = x - y</m>.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+          <image source="slopefield_2.png" width="50%"/>
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Examine whether the slopes depend on both <m>x</m> and <m>y</m> or just one variable.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+          <image source="slopefield_3.png" width="50%"/>
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Check if the slope patterns match the expected behavior from <m>\frac{dy}{dx} = x - y</m>.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+          <image source="slopefield_4.png" width="50%"/>
+        </p>
+      </statement>
+      <feedback>
+        <p>
+          Consider how the slopes should change as <m>x</m> and <m>y</m> vary.
+        </p>
+      </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <!-- Question 3: Cardsort/Matching -->
+  <exercise label="chkpt-matching-diffeq-solutions">
+    <title>Match Differential Equations with Solutions</title>
+    <statement>
+      <p>
+        Match each initial-valued differential equation with its solution.
+        <me/><!-- Vertical space hack. Is there a better way? -->
+      </p>
+
+			<sidebyside widths="50% 50%">
+				<p><m>\color{RoyalBlue}\small\text{Initial-Valued Problem}\ ⤵︎ </m></p>
+				<p><m>\color{BurntOrange}\small\text{Solution}\ ⤵︎</m></p>
+			</sidebyside>
+    </statement>
+    <feedback>
+      <p>
+        To verify a solution, substitute it into the differential equation and check that the initial conditions are satisfied.
+      </p>
+    </feedback>
+    <cardsort>
+      <match>
+        <premise><m>\dfrac{dy}{dt} = 3y,\ \ y(0) = 2</m></premise>
+        <response><m>y = 2e^{3t}</m></response>
+      </match>
+      <match>
+        <premise>
+          <m>\dfrac{d^2y}{dt^2} = 4y,\ \ y(0) = 1,\ \ y'(0) = 0</m>
+        </premise>
+        <response><m>y = \dfrac{e^{2t} + e^{-2t}}{2} = \cosh(2t)</m></response>
+      </match>
+      <match>
+        <premise><m>\dfrac{dy}{dt} + 2y = 0,\ \ y(0) = 5</m></premise>
+        <response><m>y = 5e^{-2t}</m></response>
+      </match>
+      <match>
+        <premise><m>\dfrac{d^2y}{dt^2} = -y,\ \ y(0) = 0,\ \ y'(0) = 3</m></premise>
+        <response><m>y = 3\sin(t)</m></response>
+      </match>
+      <match>
+        <premise><m>\dfrac{dy}{dt} = -y + 2,\ \ y(0) = 3</m></premise>
+        <response><m>y = 2 + e^{-t}</m></response>
+      </match>
+      <match>
+        <premise>
+          <m>
+            \begin{array}{l}
+              \dfrac{d^2y}{dt^2} - 2\dfrac{dy}{dt} + y = 0,\\
+              y(0) = 1,\ \ y'(0) = 0
+            \end{array}
+          </m>
+        </premise>
+        <response><m>y = e^t + te^t</m></response>
+      </match>
+    </cardsort>
+  </exercise>
+
+</chapter>

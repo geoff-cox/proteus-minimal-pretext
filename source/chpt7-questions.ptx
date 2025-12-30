@@ -1,22 +1,19 @@
 <chapter><title> Proteus Chpt 7 Questions </title>
 
-	<exercise label="APEX-PROTEUS-shell-method-1-v1" component="proteus">
+	<exercise label="APEX-PROTEUS-area-between-curves-1-v1" component="proteus">
 		<title> Matching Question </title>
 
 		<statement>
 			<p>
 				Match the region on the left to the expression representing its area on the right. (one to many)
+				<me/><!-- Vertical space hack. Is there a better way? -->
 			</p>
-			<p><m/></p>
-
+			
 			<sidebyside widths="36% 64%">
-				<p><m>\color{RoyalBlue}\small\text{Region bounded by}\ </m></p>
-				<p><m>\color{BurntOrange}\small\text{Area of the Region}\ </m></p>
+				<p><m>\color{RoyalBlue}\small\text{Region bounded by}\ ⤵︎ </m></p>
+				<p><m>\color{BurntOrange}\small\text{Area of the Region}\ ⤵︎</m></p>
 			</sidebyside>
 		</statement>
-
-		<feedback>
-		</feedback>
 
 		<cardsort>
 
@@ -58,7 +55,7 @@
 		</cardsort>
 	</exercise>
 
-	<exercise label="APEX-PROTEUS-area-between-curves-1-v1" component="proteus">
+	<exercise label="APEX-PROTEUS-area-between-curves-2-v1" component="proteus">
 		<title>Multiple-Choice</title>
 		<statement>
 			<p>
@@ -81,7 +78,7 @@
 		</choices>
 	</exercise>
 
-	<exercise label="APEX-PROTEUS-area-between-curves-2-v1" component="proteus">
+	<exercise label="APEX-PROTEUS-area-between-curves-3-v1" component="proteus">
 		<title>Multiple-Choice</title>
 		<statement>
 			<p>
