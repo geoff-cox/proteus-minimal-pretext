@@ -1,6 +1,6 @@
-openDate          = 11/20/2025 at 12:00am
-dueDate           = 05/20/2026 at 10:00pm
-answerDate        = 05/20/2026 at 10:00pm
+openDate          = 01/16/2026 at 12:00am
+dueDate           = 07/16/2026 at 10:00pm
+answerDate        = 07/16/2026 at 10:00pm
 paperHeaderFile   = Test_Environment/header/Test_Environment.pg
 screenHeaderFile  = Test_Environment/header/Test_Environment.pg
 description       = Test Environment
