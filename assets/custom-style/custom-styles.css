@@ -1,8 +1,25 @@
-/* Note: I like this green color: hsl(123.47deg 25% 68.71%) */
+/* Keep ONLY horizontal Parsons (hparsons_section) from going "wide" */
 
-/* Override the responsive mixin behavior just for Runestone */
-.ptx-runestone-container {
-  /* Never wider than its parent, and also respect the global hard cap */
-  --max-width: min(100%, 900px) !important;
-  max-width: var(--max-width) !important;
+@container ptx-main (width > 821px) {
+  :is(
+    .timedAssessment,
+    .theorem-like,
+    .definition-like,
+    .example-like,
+    .exercise-like,
+    .project-like,
+    .remark-like,
+    .openproblem-like,
+    .openproblems-like,
+    .computation-like,
+    .knowl__content
+  )
+  :has(.hparsons_section)
+  :not(:has(.ac_section, .codelens, .parsons_section, .datafile)) {
+    /* cancel the breakout sizing applied by the wide rule */
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
 }
