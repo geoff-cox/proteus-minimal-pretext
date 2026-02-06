@@ -1,0 +1,677 @@
+<chapter>
+  <title> Proteus Chpt 9 Questions </title>
+
+  <exercise label="chkpt-sequences-02">
+    <title>Range of a sequence</title>
+    <statement>
+      <p>
+        Select all statements that correctly describe the <m>\text{range}</m> of a sequence <m>\{a_n\}</m>.
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+        <statement>
+          <p>
+            It is the set of all distinct values taken on by <m>a_n</m>.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            The range collects values the sequence hits, ignoring how many times a value repeats.
+          </p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            It is the ordered list <m>a_1,a_2,a_3,\dots</m>.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            The ordered list is the list of terms. The range is a set, so it ignores order and repetition.
+          </p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>
+            If <m>a_n</m> repeats values, those repeated values appear only once in the range.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            Repetition does not create new elements of the range.
+          </p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            The range must be infinite because the sequence has infinitely many terms.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            A sequence can take only finitely many distinct values (for example, alternating between two numbers).
+          </p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>
+            The range can be finite even though the domain <m>\mathbb{N}</m> is infinite.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            What matters is how many distinct outputs occur, not how many inputs there are.
+          </p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            Changing the order of the terms changes the range.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            The range is a set of values, so order does not matter; reordering terms does not change which values occur.
+          </p>
+        </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <exercise label="chkpt-sequences-07">
+    <title>Using the function–sequence limit link</title>
+    <statement>
+      <p>
+        Suppose you find a function <m>f(x)</m> with <m>f(n)=a_n</m> for all <m>n\in\mathbb{N}</m>, but the limit <m>\displaystyle\lim_{x\to\infty} f(x)</m> does not exist. What can you conclude about <m>\displaystyle\lim_{n\to\infty} a_n</m>?
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>
+            The sequence limit does not exist.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            A non-existent limit for <m>f(x)</m> over the reals does not force the integer-input subsequence <m>f(n)</m> to behave the same way.
+          </p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>
+            No definite conclusion: the sequence limit may exist or may not exist.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            It is possible for <m>f(x)</m> to oscillate on real inputs while <m>f(n)</m> behaves more simply on integer inputs (for example, a cosine function can do this).
+          </p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            The sequence must diverge to <m>\infty</m>.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            Diverging to <m>\infty</m> is a specific type of divergence; “no limit for <m>f(x)</m>” does not imply unbounded growth of <m>a_n</m>.
+          </p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            The sequence must converge, but you cannot find the value.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            The theorem only gives implications in one direction: a limit for <m>f(x)</m> implies a limit for <m>a_n</m>, not the other way around.
+          </p>
+        </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <exercise label="chkpt-sequences-08">
+    <title>Which idea fits the sequence?</title>
+    <statement>
+      <p>
+        Match each sequence with the most appropriate conclusion or tool suggested by the narrative.
+      </p>
+    </statement>
+    <feedback>
+      <p>
+        Different sequences call for different “first looks”: extending to a familiar function, checking for oscillation, using absolute values, or recognizing unbounded growth.
+      </p>
+    </feedback>
+    <cardsort>
+      <match>
+        <premise><m>\ds a_n=\frac{3n^2-2n+1}{n^2-1000}</m></premise>
+        <response>Extend to a rational function <m>f(x)</m> and use a limit at infinity to find the sequence limit.</response>
+      </match>
+      <match>
+        <premise><m>\ds a_n=\cos(2\pi n)</m></premise>
+        <response>Recognize that every term equals <m>1</m>, so the sequence converges to <m>1</m>.</response>
+      </match>
+      <match>
+        <premise><m>\ds a_n=\cos(n)</m></premise>
+        <response>Use oscillation to argue the terms get close to both <m>1</m> and <m>-1</m> infinitely often, so no limit exists.</response>
+      </match>
+      <match>
+        <premise><m>\ds a_n=\frac{(-1)^n}{n}</m></premise>
+        <response>Use <m>\abs{a_n}=\frac1n\to 0</m> and conclude <m>a_n\to 0</m> (Absolute Value Theorem idea).</response>
+      </match>
+      <match>
+        <premise><m>\ds a_n=2^n</m></premise>
+        <response>Show that for every <m>M&gt;0</m>, terms eventually exceed <m>M</m>, so the sequence diverges to <m>\infty</m>.</response>
+      </match>
+    </cardsort>
+  </exercise>
+
+  <exercise label="chkpt-sequences-10">
+    <title>Convergent vs. bounded</title>
+    <statement>
+      <p>
+        Which statement is always true?
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>
+            Every bounded sequence converges.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            A sequence can stay within bounds and still fail to settle to one value (oscillation is a common reason).
+          </p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>
+            Every convergent sequence is bounded.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            If the terms get arbitrarily close to a finite limit, then all but finitely many terms lie in a small interval around that limit, and the remaining finitely many terms can also be bounded.
+          </p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            Every divergent sequence is unbounded.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            Divergence can happen even when the terms remain between two numbers (for instance, by oscillating without approaching a single value).
+          </p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>
+            If a sequence is unbounded, then it must diverge to <m>\infty</m>.
+          </p>
+        </statement>
+        <feedback>
+          <p>
+            “Unbounded” allows growth toward <m>\infty</m>, toward <m>-\,\infty</m>, or even behavior that escapes in both directions.
+          </p>
+        </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <exercise label="chkpt-sequences-cardsort-01"><title>Sequence vocabulary</title>
+    <statement>
+      <p>
+      Match each term or notation to its meaning.
+      </p>
+    </statement>
+    <feedback>
+      <p>
+      A sequence is a function on <m>\mathbb{N}</m>. The words “term,” “domain,” and “range” describe inputs, outputs, and how we talk about them.
+      </p>
+    </feedback>
+    <cardsort>
+      <match>
+      <premise>Domain of a sequence</premise>
+      <response>The set of inputs, namely the natural numbers <m>1,2,3,\dots</m>.</response>
+      </match>
+      <match>
+      <premise>Range of a sequence</premise>
+      <response>The set of all distinct values that occur among <m>a_1,a_2,a_3,\dots</m>.</response>
+      </match>
+      <match>
+      <premise>Term <m>a_4</m></premise>
+      <response>The value of the sequence at <m>n=4</m>, i.e. <m>a(4)</m>.</response>
+      </match>
+      <match>
+      <premise>Notation <m>\{a_n\}</m></premise>
+      <response>The entire sequence (the list of terms produced by <m>a(n)</m>).</response>
+      </match>
+      <match>
+      <premise>Factorial <m>n!</m></premise>
+      <response>The product <m>n(n-1)(n-2)\cdots 2\cdot 1</m>, with <m>0!=1</m>.</response>
+      </match>
+    </cardsort>
+  </exercise>
+
+  <exercise label="chkpt-sequences-cardsort-03"><title>Limit language: informal to formal</title>
+    <statement>
+      <p>
+      Match each informal description to the precise statement or term it corresponds to.
+      </p>
+    </statement>
+    <feedback>
+      <p>
+      Convergence is about what happens after some index <m>N</m>. Divergence to <m>\infty</m> is about eventually exceeding any threshold <m>M</m>.
+      </p>
+    </feedback>
+    <cardsort>
+      <!-- <match>
+        <premise>“Eventually all terms stay within <m>\varepsilon</m> of <m>L</m>.”</premise>
+        <response>There exists <m>N</m> such that <m>\abs{a_n-L}&lt;\varepsilon</m> for all <m>n&gt;N</m>.</response>
+      </match>
+      <match>
+        <premise>“The terms can be made larger than any number you name.”</premise>
+        <response>For all <m>M&gt;0</m> there exists <m>N</m> such that <m>n\ge N</m> implies <m>a_n&gt;M</m>.</response>
+      </match> -->
+      <match>
+        <premise>a <q>distance</q> away from <m>L</m></premise>
+        <response>Given any <m>\varepsilon &gt; 0</m></response>
+      </match>
+      <match>
+        <premise>somewhere in the sequence</premise>
+        <response>there exists an <m>N</m></response>
+      </match>
+      <match>
+        <premise>the rest of the terms are within this <q>distance</q> of <m>L</m></premise>
+        <response>such that <m>|a_n - L| &lt; \varepsilon</m> for all <m>n &gt; N</m></response>
+      </match>
+    </cardsort>
+  </exercise>
+
+  <exercise label="chkpt-sequences-hp-01" language="math">
+    <title>Bounded inequality</title>
+    <statement>
+      <p>
+        Arrange the blocks to form the inequality that expresses “<m>\{a_n\}</m> is bounded” using a lower bound <m>m</m> and an upper bound <m>M</m>.
+      </p>
+    </statement>
+    <blocks layout="horizontal" randomize="yes">
+      <block order="1"><m>m</m></block>
+      <block order="2"><m>\le</m></block>
+      <block order="3"><m>a_n</m></block>
+      <block order="4"><m>\le</m></block>
+      <block order="5"><m>M</m></block>
+    </blocks>
+  </exercise>
+
+  <!-- CHECKPOINT QUESTION 3: After Definition 8.1.3 (def_seq_limit) -->
+  <!-- Tests conceptual understanding of limit definition using epsilon -->
+  <exercise label="chkpt-seq-limit-concept"><title>Understanding Limits of Sequences</title>
+    <statement>
+      <p>
+      Which of the following best describes what it means for a sequence <m>\{a_n\}</m> to have limit <m>L</m>?
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+      <statement>
+        <p>
+        Every term of the sequence equals <m>L</m>.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        This is too restrictive. A sequence can converge to <m>L</m> even if no term actually equals <m>L</m>, as long as the terms get arbitrarily close to <m>L</m>.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+        The terms of the sequence get closer to <m>L</m>, but never reach it.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        This is close, but not quite right. The terms can actually equal <m>L</m> sometimes—the key is that they eventually stay arbitrarily close to <m>L</m>.
+        </p>
+      </feedback>
+      </choice>
+      <choice correct="yes">
+      <statement>
+        <p>
+        For any <m>b \ne L</m>, all terms past some point will be closer to <m>L</m> than <m>b</m>.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        Excellent! This captures the essence of the <m>\varepsilon</m>-<m>N</m> definition:
+        </p>
+
+        <tabular>
+          <row>
+            <cell>Given any <m>\varepsilon &gt; 0</m></cell><cell><m>\leftarrow</m></cell><cell><em><q>distance between <m>L</m> and <m>b</m></q></em></cell>
+          </row>
+          <row>
+            <cell>there exists an <m>N</m></cell><cell><m>\leftarrow</m></cell><cell><em><q>some point</q></em></cell>
+          </row>
+          <row>
+            <cell>such that <m>|a_n - L| &lt; \varepsilon</m></cell><cell><m>\leftarrow</m></cell><cell><em><q><m>a_{N}, a_{N+1}, a_{N+2}, \ldots</m> are closer to <m>L</m> than <m>b</m></q></em></cell>
+          </row>
+          <row>
+            <cell>for all <m>n &gt; N</m></cell><cell><m>\leftarrow</m></cell><cell><em><q>for all terms past some point</q></em></cell>
+          </row>
+          <row><cell><m/></cell></row>
+        </tabular>
+
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+        The average of all terms in the sequence equals <m>L</m>.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        This describes a different concept (Cesàro summation). Limits are about the eventual behavior of terms, not their average.
+        </p>
+      </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <!-- CHECKPOINT QUESTION 4: After Theorem 8.1.2 (thm_seq_limit) -->
+  <!-- Tests ability to apply the theorem connecting function and sequence limits -->
+  <exercise label="chkpt-seq-function-limit"><title>Connecting Function and Sequence Limits</title>
+    <statement>
+      <p>
+      Consider the function <m>f(x) = \frac{3x^2+5x}{x^2+1}</m>. If we know that <m>\lim\limits_{x\to\infty} f(x) = 3</m>, what can we conclude about the sequence <m>\{a_n\} = \left\{\frac{3n^2+5n}{n^2+1}\right\}</m>?
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+      <statement>
+        <p>
+        We cannot conclude anything about <m>\lim\limits_{n\to\infty} a_n</m>.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        Actually, we can! Since <m>f(n) = a_n</m> for all positive integers <m>n</m>, Theorem 8.1.2 allows us to draw a conclusion.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+        <m>\lim\limits_{n\to\infty} a_n</m> might equal 3, but we need more information.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        We actually have enough information. Check Theorem 8.1.2 about the relationship between function limits and sequence limits.
+        </p>
+      </feedback>
+      </choice>
+      <choice correct="yes">
+      <statement>
+        <p>
+        <m>\lim\limits_{n\to\infty} a_n = 3</m>
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        Correct! By Theorem 8.1.2, if <m>\lim\limits_{x\to\infty} f(x) = L</m> and <m>f(n) = a_n</m>, then <m>\lim\limits_{n\to\infty} a_n = L</m>. This theorem is extremely useful for evaluating sequence limits!
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+        The sequence diverges.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        No—since the corresponding function limit exists and equals 3, the sequence converges to 3 by Theorem 8.1.2.
+        </p>
+      </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <!-- CHECKPOINT QUESTION 5: After Example 8.1.4 (ex_seq4) -->
+  <!-- Multiple-answer question about convergence/divergence properties -->
+  <exercise label="chkpt-seq-converge-properties"><title>Convergence and Divergence Properties</title>
+    <statement>
+      <p>
+      Which of the following statements are TRUE?
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes">
+      <statement>
+        <p>
+        If <m>\lim\limits_{x\to\infty} f(x)</m> does not exist, the sequence <m>\{f(n)\}</m> might still converge.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        Correct! The example <m>f(x) = \cos(2\pi x)</m> oscillates as a function, but <m>\{f(n)\} = \{\cos(2\pi n)\} = \{1, 1, 1, \ldots\}</m> converges to 1.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+        A sequence that oscillates between two values must diverge.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        This is false. While the sequence <m>\{4 + (-1)^n\}</m> from Example 8.1.4 does oscillate and diverge, a sequence could oscillate between values that get closer together and still converge (like <m>\{(-1)^n/n\}</m> converging to 0).
+        </p>
+      </feedback>
+      </choice>
+      <choice correct="yes">
+      <statement>
+        <p>
+        If <m>\lim\limits_{n\to\infty} |a_n| = 0</m>, then <m>\lim\limits_{n\to\infty} a_n = 0</m>.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        Correct! This is the Absolute Value Theorem (Theorem 8.1.4). If the absolute values approach 0, then the terms themselves must approach 0.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+        Every convergent sequence must be monotonic.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        This is false. The sequence <m>\{(-1)^n/n\}</m> converges to 0 but is not monotonic—it alternates between positive and negative values.
+        </p>
+      </feedback>
+      </choice>
+      <choice correct="yes">
+      <statement>
+        <p>
+        We can use L'Hôpital's Rule to evaluate some sequence limits.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        Correct! When we can write <m>a_n = f(n)</m> for some function <m>f</m>, we can use L'Hôpital's Rule on <m>\lim\limits_{x\to\infty} f(x)</m> and then apply Theorem 8.1.2.
+        </p>
+      </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <!-- CHECKPOINT QUESTION 6: After Definition 8.1.7 (def_bounded) -->
+  <!-- Matching exercise connecting sequences to boundedness properties -->
+  <exercise label="chkpt-seq-bounded-matching"><title>Identifying Bounded Sequences</title>
+    <statement>
+      <p>
+      Match each sequence to its boundedness property.
+      </p>
+    </statement>
+    <feedback>
+      <p>
+      Remember: bounded means both bounded above and below; bounded above means there's a ceiling but possibly no floor; bounded below means there's a floor but possibly no ceiling.
+      </p>
+    </feedback>
+    <cardsort>
+      <match>
+        <premise><m>\left\{\frac{\sin(n)}{n}\right\}</m></premise>
+        <premise><m>\left\{\frac{(-1)^n \cdot n}{n+1}\right\}</m></premise>
+        <response>Bounded</response>
+      </match>
+      <match>
+        <premise><m>\{n^2\}</m></premise>
+        <response>Bounded below only</response>
+      </match>
+      <match>
+        <premise><m>\{-n^3\}</m></premise>
+        <response>Bounded above only</response>
+      </match>
+      <match>
+        <premise><m>\{n\sin(n)\}</m></premise>
+        <response>Unbounded</response>
+      </match>
+    </cardsort>
+  </exercise>
+
+  <!-- CHECKPOINT QUESTION 7: After Theorem 8.1.8 (thm_converge_bounded) -->
+  <!-- True/False about the converse of the theorem -->
+  <exercise label="chkpt-seq-bounded-converse"><title>Bounded Sequences and Convergence</title>
+    <statement correct="no">
+      <p>
+      True or False: If a sequence <m>\{a_n\}</m> is bounded, then it must converge.
+      </p>
+    </statement>
+    <feedback>
+      <p>
+      False! Theorem 8.1.8 states that convergent sequences are bounded, but the converse is not true. A counterexample is <m>\{(-1)^n\}</m>, which is bounded (all terms are either 1 or -1) but diverges because it oscillates. To guarantee convergence, a bounded sequence must also be <em>monotonic</em> (Theorem 8.1.10).
+      </p>
+    </feedback>
+  </exercise>
+
+  <!-- CHECKPOINT QUESTION 8: After Definition 8.1.9 (def_monotonic) -->
+  <!-- Clickable area question about monotonicity -->
+  <exercise label="chkpt-seq-monotonic-identify"><title>Identifying Monotonic Behavior</title>
+    <statement>
+      <p>
+      Click on all sequences below that are monotonically increasing.
+      </p>
+    </statement>
+    <areas>
+      <p>
+        <area><m>\left\{\frac{n}{n+1}\right\}</m></area><m>,\quad</m>
+        <area correct="no"><m>\{(-1)^n \cdot n\}</m></area><m>,\quad</m>
+        <area><m>\left\{1 - \frac{1}{n}\right\}</m></area><m>,\quad</m>
+        <area correct="no"><m>\left\{\frac{n^2-9}{n^2-10n+26}\right\}</m></area><m>,\quad</m>
+        <area correct="no"><m>\{3 - 2^n\}</m></area>
+      </p>
+    </areas>
+    <feedback>
+      <p>
+      A sequence is monotonically increasing if <m>a_n \leq a_{n+1}</m> for all <m>n</m>. Check this by computing <m>a_{n+1} - a_n</m>: if it's always non-negative, the sequence is increasing. Note that <m>\{(-1)^n \cdot n\}</m> alternates in sign, <m>\left\{\frac{n^2-9}{n^2-10n+26}\right\}</m> increases then decreases (see Example 8.1.7c), and <m>\{3-2^n\}</m> is <em>decreasing</em> since the <m>2^n</m> term grows.
+      </p>
+    </feedback>
+  </exercise>
+
+  <!-- CHECKPOINT QUESTION 10: After Theorem 8.1.10 (thm_monotonic_converge) -->
+  <!-- Comprehensive question applying the Monotonic Convergence Theorem -->
+  <exercise label="chkpt-seq-monotonic-converge"><title>Applying the Monotonic Convergence Theorem</title>
+    <statement>
+      <p>
+      Consider the sequence <m>\{a_n\}</m> where <m>a_1 = 2</m> and <m>a_{n+1} = \sqrt{2 + a_n}</m> for all <m>n \geq 1</m>. Suppose we can show that:
+      </p>
+      <p>
+      (i) <m>a_n &lt; 3</m> for all <m>n</m>, and
+      </p>
+      <p>
+      (ii) <m>a_{n+1} > a_n</m> for all <m>n</m>.
+      </p>
+      <p>
+      What can we conclude?
+      </p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+      <statement>
+        <p>
+        The sequence might converge or might diverge—we need more information.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        We actually have enough information! We know the sequence is both monotonic (increasing) and bounded (above by 3, below by 2).
+        </p>
+      </feedback>
+      </choice>
+      <choice correct="yes">
+      <statement>
+        <p>
+        The sequence must converge to some limit <m>L</m> where <m>2 \leq L \leq 3</m>.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        Excellent! By Theorem 8.1.10, a monotonically increasing sequence that is bounded above must converge. Since all terms satisfy <m>2 \leq a_n &lt; 3</m>, the limit must satisfy <m>2 \leq L \leq 3</m>. (In fact, by taking limits in the recursion relation, we can show <m>L = 2</m>!)
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+        The sequence must converge to 3.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        While the theorem guarantees convergence, it doesn't tell us the exact value of the limit. We know the limit is at most 3, but it could be less.
+        </p>
+      </feedback>
+      </choice>
+      <choice>
+      <statement>
+        <p>
+        The sequence must diverge to infinity.
+        </p>
+      </statement>
+      <feedback>
+        <p>
+        No—the sequence is bounded above by 3, so it cannot diverge to infinity. Check Theorem 8.1.10 about bounded monotonic sequences.
+        </p>
+      </feedback>
+      </choice>
+    </choices>
+  </exercise>
+</chapter>
