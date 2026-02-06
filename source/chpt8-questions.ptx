@@ -180,4 +180,238 @@
     </cardsort>
   </exercise>
 
+
+				<image>
+					<latex-image>
+						\begin{tikzpicture}[samples=50]
+
+							% === colors ===
+							\def\fColor{blue}			\def\fFill{\fColor!15}
+							\def\gColor{green!60!black}	\def\gFill{\gColor!15}
+
+							% === figure/domain/tick bounds ===
+							\def\tmin{-0.6}	\def\tmax{2.45}
+							\def\ymin{-1.8}		\def\ymax{7.5}
+							\def\tticks{1, 2}
+							\def\yticks{2, 4}
+
+							% === Function definitions ===
+							\newcommand{\f}[1]{e^(#1)}	\def\ftex{e^t}
+							\def\a{0}	\def\b{2}
+							\def\c{0.65}
+
+							\begin{axis}[
+								width=15cm, height=7cm, scale=0.35,
+								xlabel={$t$}, ylabel={$y$},
+								title={Analytic Solution},
+								title style={font=\small},
+								grid=none,
+								tick style={thick},
+								line width=1pt,
+								axis lines=middle,
+								xtick distance=1, ytick distance=4,
+								minor x tick num=1, minor y tick num=1,
+								xmin=\tmin, xmax=\tmax, ymin=\ymin, ymax=\ymax,
+							]
+							
+								% Read and plot data from file
+								\addplot [domain=\a:\b, \fColor] {e^x};
+								\draw[gray, thin]	(\b, 0) -- (\b, {\f{\b}});
+								
+
+								\draw[dashed, thick]	(\c, {\f{\c}}) -- (\c, 0);
+								\draw[dashed, thick]	(\c, {\f{\c}}) -- (0, {\f{\c}});
+								\node[below, font=\small] at (\c, 0) {\c};
+								\node[left, font=\small] at (0,{\f{\c}}) {$1.916$};
+
+								% === Labels ===
+								\node[\fColor, font=\large, above] at (1.5, 5) {$\ftex$};
+
+							\end{axis}
+
+						\end{tikzpicture}
+					</latex-image>
+				</image>
+
+
+		  <exercise cols="2" label="ex-graphical-numerical-match-slope">
+        <statement>
+          <p>
+            Match each slope field below with the appropriate differential equation.
+          </p>
+          <sbsgroup>
+            <sidebyside widths="40% 40%">
+              <image>
+                <shortdescription>
+                  Graph of slope field used in the exercise.
+                </shortdescription>
+                <description>
+                  <p>
+                    The <m>y</m> and the <m>x</m> axis are shown both uncalibrated. In the second and the third
+                    quadrants the field lines towards larger negative values are south facing. The field lines
+                    closer to the <m>y</m> axis are south-east facing. Around the <m>y</m> axis the field lines
+                    are almost horizontal. In the first and the fourth quadrants the field lines closer to the
+                    <m>y</m> axis are east facing but for greater values of <m>x</m> they are south-east facing.
+                  </p>
+                </description>
+                <latex-image label="img_slopefield_exercise_a">
+                  \begin{tikzpicture}
+
+                  \begin{axis}[
+                    view={0}{90},
+                    domain = -2:2,
+                    y domain = -2:2,
+                  	ytick={-3,-2,-1,0,1,2,3},
+                  ]
+
+                  \addplot3 [secondcolor,quiver = {u = {1/(sqrt(1+(x*(1-x))^2))}, v = {(x*(1-x))/(sqrt(1+(x*(1-x))^2))},scale arrows=.1},samples=15]{0};
+
+                  \end{axis}
+
+                  %\node [right] at (myplot.right of origin) { $x$};
+                  %\node [above] at (myplot.above origin) { $y$};
+
+                  \end{tikzpicture}
+                </latex-image>
+              </image>
+              <image>
+                <shortdescription>
+                  Graph of slope field used in the exercise.
+                </shortdescription>
+                <description>
+                  <p>
+                    The field lines are concentric facing upwards in the second and the first quadrant along the
+                    positive <m>y</m> axis. The lines furthest away from the origin are more circular and the lines
+                    closest to the <m>x</m> axis are almost parallel to the <m>x</m> axis. Similarly in the third
+                    and the fourth quadrant the field lines are concentric along the negative <m>y</m> axis and the
+                    ones away from origin are more circular and the ones closest to the <m>x</m> axis are almost
+                    parallel to the <m>x</m> axis.
+                  </p>
+                </description>
+                <latex-image label="img_slopefield_exercise_b">
+                  \begin{tikzpicture}
+
+                  \begin{axis}[
+                    view={0}{90},
+                    domain = -2:2,
+                    y domain = -2:2,
+                  	ytick={-3,-2,-1,0,1,2,3},
+                  ]
+
+                  \addplot3 [secondcolor,quiver = {u = {1/(sqrt(1+(x*y)^2))}, v = {(x*y)/(sqrt(1+(x*y)^2))},scale arrows=.1},samples=15]{0};
+
+                  \end{axis}
+
+                  %\node [right] at (myplot.right of origin) { $x$};
+                  %\node [above] at (myplot.above origin) { $y$};
+
+                  \end{tikzpicture}
+                </latex-image>
+              </image>
+            </sidebyside>
+            <sidebyside widths="40% 40%">
+                <p>
+                  (a)
+                </p>
+                <p>
+                  (b)
+                </p>
+            </sidebyside>
+            <sidebyside widths="40% 40%">
+              <image>
+                <shortdescription>
+                  Graph of slope field used in the exercise.
+                </shortdescription>
+                <description>
+                  <p>
+                    The field lines in the second and the first quadrant are south-east facing and appear to be east
+                    facing when they come very close to the <m>x</m> axis. Similarly the field lines in the third
+                    and the fourth quadrants are north-east facing and become east facing when they come very close
+                    to the <m>x</m> axis.
+                  </p>
+                </description>
+                <latex-image label="img_slopefield_exercise_c">
+                  \begin{tikzpicture}
+
+                  \begin{axis}[
+                    view={0}{90},
+                    domain = -2:2,
+                    y domain = -2:2,
+                  	ytick={-3,-2,-1,0,1,2,3},
+                  ]
+
+                  \addplot3 [secondcolor,quiver = {u = {1/(sqrt(1+(-y)^2))}, v = {(-y)/(sqrt(1+(-y)^2))},scale arrows=.1},samples=15]{0};
+
+                  \end{axis}
+
+                  %\node [right] at (myplot.right of origin) { $x$};
+                  %\node [above] at (myplot.above origin) { $y$};
+
+                  \end{tikzpicture}
+                </latex-image>
+              </image>
+              <image>
+                <shortdescription>
+                  Graph of slope field used in the exercise.
+                </shortdescription>
+                <description>
+                  <p>
+                    The field lines appear to be concentric dome shaped lines with peaks along the positive <m>y</m>
+                    axis.
+                  </p>
+                </description>
+                <latex-image label="img_slopefield_exercise_d">
+                  \begin{tikzpicture}
+
+                  \begin{axis}[
+                    view={0}{90},
+                    domain = -2:2,
+                    y domain = -2:2,
+                  	ytick={-3,-2,-1,0,1,2,3},
+                  ]
+
+                  \addplot3 [secondcolor,quiver = {u = {1/(sqrt(1+(-x)^2))}, v = {(-x)/(sqrt(1+(-x)^2))},scale arrows=.1},samples=15]{0};
+
+                  \end{axis}
+
+                  %\node [right] at (myplot.right of origin) { $x$};
+                  %\node [above] at (myplot.above origin) { $y$};
+
+                  \end{tikzpicture}
+                </latex-image>
+              </image>
+            </sidebyside>
+            <sidebyside widths="40% 40%">
+              <p>
+                (c)
+              </p>
+
+              <p>
+                (d)
+              </p>
+            </sidebyside>
+          </sbsgroup>
+        </statement>
+
+        <cardsort>
+          <match>
+            <premise><m>\yp=xy</m></premise>
+            <response>(b)</response>
+          </match>
+          <match>
+            <premise><m>\yp = -y</m></premise>
+            <response>(c)</response>
+          </match>
+          <match>
+            <premise><m>\yp = -x</m></premise>
+            <response>(d)</response>
+          </match>
+          <match>
+            <premise><m>\yp = x(1-x)</m></premise>
+            <response>(a)</response>
+          </match>
+          
+        </cardsort>
+
+      </exercise>
 </chapter>
