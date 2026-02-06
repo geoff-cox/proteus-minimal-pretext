@@ -10,23 +10,7 @@
 
 sub latexImagePreamble {
 return <<'END_LATEX_IMAGE_PREAMBLE'
-\usepackage{tikz}
-\usetikzlibrary{backgrounds}
-\usetikzlibrary{arrows,arrows.meta,matrix}
-\usetikzlibrary{decorations}
-\usetikzlibrary{animations}
-\usetikzlibrary{tikzmark,calc}
-\usetikzlibrary{bending, positioning}
-\usetikzlibrary{3d}
-\usepackage{pgfplots, pgfplotstable}
-\pgfplotsset{compat=1.18}
-\usepgfmodule {nonlineartransformations}\usetikzlibrary {curvilinear}
-\usepackage{graphicx} % For scalebox
-\usepackage{xfrac}
-\usepackage{mathtools}
-\usepackage{ulem}
-\usepackage{transparent}
-\usepackage{ifthen}
+\usepackage[dvipsnames]{xcolor}
 
 END_LATEX_IMAGE_PREAMBLE
 }
